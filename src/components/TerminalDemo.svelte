@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { t } from "../i18n/index";
+
   let currentCmd = $state("swal node status");
   let terminalOutput = $state<string[]>([
     "SWAL Mesh Core v1.0.0-PROD (Linux x86_64)",
@@ -89,13 +91,13 @@
   <div class="max-w-5xl mx-auto space-y-8">
     <div class="text-center space-y-3">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-cyan/10 border border-accent-cyan/30 text-xs font-mono text-accent-cyan">
-        <span>INTERACTIVE HUD TERMINAL</span>
+        <span>{t("terminal.badge")}</span>
       </div>
       <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight font-mono">
-        &gt; SWAL_CLI_SIMULATOR
+        {t("terminal.title")}
       </h2>
       <p class="text-text-secondary text-sm font-mono">
-        Test live simulated commands against the Xavier memory core and edge-mesh network.
+        {t("terminal.subtitle")}
       </p>
     </div>
 
@@ -128,14 +130,14 @@
           type="text"
           bind:value={currentCmd}
           onkeydown={handleKeydown}
-          placeholder="Type a command (e.g. swal node status, xavier memory query, help)..."
+          placeholder={t("terminal.placeholder")}
           class="flex-1 bg-transparent border-none text-white focus:outline-none placeholder-text-muted text-xs font-mono"
         />
         <button
           onclick={() => { runCommand(currentCmd); currentCmd = ""; }}
           class="px-3 py-1 rounded bg-accent-cyan/20 text-accent-cyan hover:bg-accent-cyan/30 text-[11px] font-bold transition-all cursor-pointer"
         >
-          Execute
+          {t("terminal.execute")}
         </button>
       </div>
     </div>

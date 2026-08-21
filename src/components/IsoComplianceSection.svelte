@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { ISO_STANDARDS } from '../data/ecosystem';
+  import { ISO_STANDARDS } from "../data/ecosystem";
+  import { t } from "../i18n/index";
 </script>
 
 <section id="iso" class="py-24 px-6 relative bg-bg-dark/40 border-t border-white/5">
@@ -7,13 +8,13 @@
     <!-- Header -->
     <div class="space-y-4 max-w-3xl">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-orange/10 border border-accent-orange/30 text-xs font-mono text-accent-orange">
-        <span>STANDARDS & CYBERNETIC SECURITY</span>
+        <span>{t("iso.badge")}</span>
       </div>
       <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-        ISO Compliance & <span class="text-accent-orange">Data Governance</span>
+        {t("iso.title")} <span class="text-accent-orange">{t("iso.titleAccent")}</span>
       </h2>
       <p class="text-text-secondary text-base md:text-lg leading-relaxed">
-        Engineered from day one to satisfy rigorous international standards for security, privacy, cloud persistence, and agentic AI oversight.
+        {t("iso.subtitle")}
       </p>
     </div>
 
@@ -35,7 +36,7 @@
 
           <div class="pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-mono text-accent-emerald">
             <span>✔</span>
-            <span>By-Design Architecture</span>
+            <span>{t("iso.byDesign")}</span>
           </div>
         </div>
       {/each}
@@ -43,23 +44,23 @@
 
     <!-- Advanced Cybernetic Features -->
     <div class="glass-panel p-8 md:p-10 border-white/5 space-y-6">
-      <h3 class="text-xl font-bold text-white">Private Mesh & Tor / Onion Transport Layer</h3>
+      <h3 class="text-xl font-bold text-white">{t("iso.privateMeshTitle")}</h3>
       <p class="text-sm text-text-secondary leading-relaxed max-w-4xl">
-        SWAL allows any collective, enterprise, or community to spin up private encrypted P2P mesh networks spanning from <strong>1 to thousands of nodes</strong>. Network packets utilize end-to-end ChaCha20-Poly1305 encryption, optional Tor / Onion transport routing, and post-quantum ML-KEM encapsulation, ensuring complete resistance against eavesdropping, ISP tracking, and traffic analysis.
+        {t("iso.privateMeshDesc")}
       </p>
 
       <div class="grid sm:grid-cols-3 gap-4 pt-2">
         <div class="p-4 rounded-xl bg-bg-void/60 border border-white/5 space-y-1 font-mono text-xs">
-          <div class="text-accent-cyan font-bold">Private Mallas (1-N)</div>
-          <div class="text-text-muted">Isolated subnets for closed teams</div>
+          <div class="text-accent-cyan font-bold">{t("iso.boxMallas")}</div>
+          <div class="text-text-muted">{t("iso.boxMallasDesc")}</div>
         </div>
         <div class="p-4 rounded-xl bg-bg-void/60 border border-white/5 space-y-1 font-mono text-xs">
-          <div class="text-accent-emerald font-bold">Onion Transport</div>
-          <div class="text-text-muted">Tor-hidden routing for peer discovery</div>
+          <div class="text-accent-emerald font-bold">{t("iso.boxTor")}</div>
+          <div class="text-text-muted">{t("iso.boxTorDesc")}</div>
         </div>
         <div class="p-4 rounded-xl bg-bg-void/60 border border-white/5 space-y-1 font-mono text-xs">
-          <div class="text-accent-orange font-bold">Role-Based ACL</div>
-          <div class="text-text-muted">Least-privilege cybernetic access</div>
+          <div class="text-accent-orange font-bold">{t("iso.boxAcl")}</div>
+          <div class="text-text-muted">{t("iso.boxAclDesc")}</div>
         </div>
       </div>
     </div>

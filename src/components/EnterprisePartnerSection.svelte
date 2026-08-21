@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { TRIPRO_CASE_STUDY } from '../data/ecosystem';
+  import { TRIPRO_CASE_STUDY } from "../data/ecosystem";
+  import { t } from "../i18n/index";
 </script>
 
 <section id="enterprise" class="py-24 px-6 relative border-t border-white/5 overflow-hidden">
@@ -7,13 +8,13 @@
     <!-- Header -->
     <div class="space-y-4 max-w-3xl">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-emerald/10 border border-accent-emerald/30 text-xs font-mono text-accent-emerald">
-        <span>★ PIONEER COMMERCIAL PARTNER</span>
+        <span>{t("enterprise.badge")}</span>
       </div>
       <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-        Enterprise Validation: <span class="text-accent-emerald">tripro.cl</span>
+        {t("enterprise.title")} <span class="text-accent-emerald">tripro.cl</span>
       </h2>
       <p class="text-text-secondary text-base md:text-lg leading-relaxed">
-        Real-world industrial operations powered by SWAL's sovereign local-first architecture in Chile.
+        {t("enterprise.subtitle")}
       </p>
     </div>
 
@@ -29,11 +30,11 @@
           </div>
 
           <blockquote class="text-lg md:text-xl font-medium text-white/90 italic leading-relaxed border-l-2 border-accent-emerald pl-6">
-            "{TRIPRO_CASE_STUDY.quote}"
+            "{t("enterprise.quote")}"
           </blockquote>
 
           <p class="text-sm text-text-secondary leading-relaxed">
-            Through <strong>ManteniApp</strong>, tripro.cl executes continuous work orders, equipment vibration telemetry, and digital compliance sign-offs in remote mining environments with zero cloud dependency.
+            {t("enterprise.description")}
           </p>
 
           <div class="flex items-center gap-4 pt-2">
@@ -43,7 +44,7 @@
               rel="noopener noreferrer"
               class="px-5 py-2.5 rounded-xl bg-accent-emerald text-bg-void font-bold text-xs font-mono tracking-wider uppercase transition-all hover:bg-accent-emerald/90 shadow-lg shadow-accent-emerald/20"
             >
-              Access ManteniApp (tripro.cl) ↗
+              {t("enterprise.accessBtn")}
             </a>
             <a
               href="https://tripro.cl"
@@ -51,7 +52,7 @@
               rel="noopener noreferrer"
               class="text-xs font-mono text-text-muted hover:text-white transition-colors"
             >
-              Visit tripro.cl Portal
+              {t("enterprise.visitPartner")}
             </a>
           </div>
         </div>
@@ -71,36 +72,36 @@
 
     <!-- Comparative Table -->
     <div class="space-y-6 pt-6">
-      <h3 class="text-xl font-bold text-white">Architecture Comparison: Traditional SaaS vs SWAL</h3>
+      <h3 class="text-xl font-bold text-white">{t("enterprise.tableTitle")}</h3>
       <div class="overflow-x-auto">
         <table class="w-full text-left text-xs font-mono border-collapse">
           <thead>
             <tr class="border-b border-white/10 text-text-muted">
-              <th class="py-3 px-4">Dimension</th>
-              <th class="py-3 px-4 text-red-400">Traditional Enterprise SaaS</th>
-              <th class="py-3 px-4 text-accent-emerald">SWAL Sovereign Mesh</th>
+              <th class="py-3 px-4">{t("enterprise.tableDim")}</th>
+              <th class="py-3 px-4 text-red-400">{t("enterprise.tableLegacy")}</th>
+              <th class="py-3 px-4 text-accent-emerald">{t("enterprise.tableSwal")}</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-white/5 text-text-secondary">
             <tr>
-              <td class="py-3 px-4 font-bold text-white">Offline Operations</td>
-              <td class="py-3 px-4 text-text-muted">Fails or requires clunky sync plugins</td>
-              <td class="py-3 px-4 text-accent-emerald font-bold">100% Native Local-First (CRDT)</td>
+              <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowOffline")}</td>
+              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowOfflineLegacy")}</td>
+              <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowOfflineSwal")}</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-bold text-white">Data Privacy</td>
-              <td class="py-3 px-4 text-text-muted">Exfiltrated to US vendor multi-tenant cloud</td>
-              <td class="py-3 px-4 text-accent-emerald font-bold">Zero-Knowledge on-device persistence</td>
+              <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowPrivacy")}</td>
+              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowPrivacyLegacy")}</td>
+              <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowPrivacySwal")}</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-bold text-white">Pricing Model</td>
-              <td class="py-3 px-4 text-text-muted">0-00 / user / month recurring fees</td>
-              <td class="py-3 px-4 text-accent-emerald font-bold">bash Software fees (Run your own node)</td>
+              <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowPricing")}</td>
+              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowPricingLegacy")}</td>
+              <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowPricingSwal")}</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-bold text-white">Vendor Lock-In</td>
-              <td class="py-3 px-4 text-text-muted">Proprietary formats and walled gardens</td>
-              <td class="py-3 px-4 text-accent-emerald font-bold">Open SQLite, AGPL-3.0, Portable</td>
+              <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowLockin")}</td>
+              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowLockinLegacy")}</td>
+              <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowLockinSwal")}</td>
             </tr>
           </tbody>
         </table>
