@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.svelte";
+import HeroSection from "../components/HeroSection.svelte";
+import CorePillars from "../components/CorePillars.svelte";
+import EcosystemShowcase from "../components/EcosystemShowcase.svelte";
+import EnterprisePartnerSection from "../components/EnterprisePartnerSection.svelte";
+import IsoComplianceSection from "../components/IsoComplianceSection.svelte";
+import HardwareAndCloudSection from "../components/HardwareAndCloudSection.svelte";
+import DaoHandoverSection from "../components/DaoHandoverSection.svelte";
+import TerminalDemo from "../components/TerminalDemo.svelte";
+import Footer from "../components/Footer.svelte";
+---
+
+<Layout>
+  <Navbar client:load />
+  <main class="flex-1">
+    <HeroSection client:load />
+    <CorePillars client:visible />
+    <EcosystemShowcase client:visible />
+    <EnterprisePartnerSection client:visible />
+    <IsoComplianceSection client:visible />
+    <HardwareAndCloudSection client:visible />
+    <DaoHandoverSection client:visible />
+    <TerminalDemo client:visible />
+  </main>
+  <Footer client:visible />
+</Layout>
