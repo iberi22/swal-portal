@@ -24,7 +24,6 @@
     <div class="space-y-3">
       <div class="font-bold text-white uppercase tracking-wider text-xs">Ecosystem Links</div>
       <ul class="space-y-2 text-text-muted">
-        <li><a href="https://tripro.cl/manteniapp" target="_blank" class="hover:text-accent-cyan transition-colors">ManteniApp (tripro.cl)</a></li>
         <li><a href="https://saberparatodos.space" target="_blank" class="hover:text-accent-cyan transition-colors">SaberParaTodos</a></li>
         <li><a href="https://estante-inventario.vercel.app" target="_blank" class="hover:text-accent-cyan transition-colors">Shelf POS</a></li>
         <li><a href="https://github.com/iberi22/xavier" target="_blank" class="hover:text-accent-cyan transition-colors">Xavier Memory Core</a></li>
@@ -52,7 +51,6 @@
     <div class="flex items-center gap-6">
       <a href="https://github.com/southwest-ai-labs" target="_blank" class="hover:text-white">GitHub Org</a>
       <a href="https://github.com/iberi22" target="_blank" class="hover:text-white">@iberi22</a>
-      <a href="https://tripro.cl" target="_blank" class="hover:text-white">tripro.cl</a>
       <a href="https://t.me/BeRi0n3" target="_blank" class="hover:text-white">Telegram</a>
     </div>
   </div>

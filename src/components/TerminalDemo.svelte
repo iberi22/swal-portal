@@ -20,7 +20,6 @@
       "  swal node status     - Display local mesh node telemetry",
       "  xavier memory query  - Inspect cognitive memory vectors",
       "  mesh peers list      - List connected P2P mesh nodes",
-      "  tripro case          - View tripro.cl enterprise deployment stats",
       "  gpu benchmark        - Run local on-device inference test",
       "  clear                - Clear terminal screen"
     ],
@@ -35,25 +34,17 @@
     ],
     "xavier memory query": [
       "--- XAVIER COGNITIVE GRAPH QUERY ---",
-      "Query: \"Ecosystem architecture and enterprise client tripro.cl\"",
-      "[Result 1] apps/manteniapp (similarity: 0.94) -> Enterprise FSM SaaS with tripro.cl",
+      "Query: \"Ecosystem architecture and P2P mesh protocols\"",
+      "[Result 1] apps/shelf (similarity: 0.94) -> Inventory & POS P2P local-first",
       "[Result 2] cores/edge-mesh (similarity: 0.91) -> CRDT P2P data plane",
       "[Result 3] docs/SWAL/COMMERCIAL_STRATEGY.md (similarity: 0.89) -> ISO compliance & zero paywalls"
     ],
     "mesh peers list": [
       "--- CONNECTED P2P PEERS ---",
-      "1. [Chile] tripro-node-01 (Enterprise / ManteniApp) -> 12ms",
+      "1. [Chile] node-antiago (Community) -> 12ms",
       "2. [Colombia] swal-genesis-bela (Core Node) -> 8ms",
       "3. [Germany] peer-node-berlin (Community) -> 64ms",
       "4. [Japan] peer-node-tokyo (Community) -> 110ms"
-    ],
-    "tripro case": [
-      "--- TRIPRO.CL ENTERPRISE PROFILE ---",
-      "Partner: tripro.cl (Chile)",
-      "Software: ManteniApp (PWA + AI Diagnostics)",
-      "Deployment: Heavy Mining & Industrial Maintenance",
-      "Data Privacy: 100% On-Premises / Sovereign",
-      "Licensing Fee: $0 / user (Sovereign Node Mode)"
     ],
     "gpu benchmark": [
       "--- ON-DEVICE GPU BENCHMARK ---",

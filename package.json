@@ -11,15 +11,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/svelte": "^8.1.0",
-    "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.2.2",
-    "svelte": "^5.55.5",
-    "tailwindcss": "^4.2.4",
+    "@astrojs/svelte": "^8.1.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^6.4.8",
+    "svelte": "^5.56.10",
+    "tailwindcss": "^4.3.3",
     "three": "^0.170.0"
   },
   "devDependencies": {
     "@types/three": "^0.170.0",
-    "typescript": "~5.7.0"
+    "typescript": "~5.7.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "sharp": "^0.35.3",
+      "esbuild": "^0.28.2"
+    }
   }
 }
