@@ -134,11 +134,13 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {#each filteredApps as app (app.id)}
         <div class="glass-panel p-6 flex flex-col justify-between space-y-6 hover:border-accent-cyan/40 transition-all duration-300 relative group">
+          <!-- Enterprise badge oculto: tripro.cl aún no lanzado
           {#if app.isEnterpriseClient}
             <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-accent-emerald text-bg-void text-[10px] font-mono font-bold tracking-wider uppercase shadow-md">
               ★ tripro.cl Enterprise
             </div>
           {/if}
+          -->
 
           <div class="space-y-4">
             <div class="flex items-center justify-between pt-1">
