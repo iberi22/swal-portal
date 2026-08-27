@@ -41,7 +41,7 @@ export function t(key: string): string {
     lang = "en";
   }
   const dict = TRANSLATIONS[lang] || TRANSLATIONS["en"];
-  return dict[key] || TRANSLATIONS["en"]?.[key] || key;
+  return dict[key] || TRANSLATIONS["en"]?.[key] || "";
 }
 
 export { LANGUAGE_OPTIONS, type SupportedLanguage };
