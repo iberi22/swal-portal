@@ -13,6 +13,7 @@ export interface SwalApp {
 }
 
 export const SWAL_APPS: SwalApp[] = [
+  /* OCULTO: tripro.cl / ManteniApp aún no lanzado
   {
     id: "manteniapp",
     name: "ManteniApp",
@@ -25,6 +26,7 @@ export const SWAL_APPS: SwalApp[] = [
     liveUrl: "https://tripro.cl/manteniapp",
     isEnterpriseClient: true,
   },
+  */
   {
     id: "xavier",
     name: "Xavier",
@@ -240,6 +242,7 @@ export const ISO_STANDARDS = [
   }
 ];
 
+/* OCULTO: tripro.cl / ManteniApp aún no lanzado
 export const TRIPRO_CASE_STUDY = {
   partnerName: "tripro.cl",
   country: "Chile",
@@ -253,3 +256,4 @@ export const TRIPRO_CASE_STUDY = {
     { label: "Firmas Digitales", value: "Instantáneas", detail: "Validación biométrica en terreno" }
   ]
 };
+*/

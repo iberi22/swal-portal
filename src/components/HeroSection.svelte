@@ -11,8 +11,10 @@
       <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-xs font-mono text-accent-cyan backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
         <span>{t("hero.badge")}</span>
-        <span class="text-white/30">|</span>
-        <span class="text-white/80">{t("hero.partners")}</span>
+        {#if t("hero.partners")}
+          <span class="text-white/30">|</span>
+          <span class="text-white/80">{t("hero.partners")}</span>
+        {/if}
       </div>
 
       <!-- Main Headline -->
@@ -37,13 +39,15 @@
         >
           {t("hero.exploreApps")}
         </a>
-        <a
-          href="#enterprise"
-          class="px-6 py-3.5 rounded-xl bg-bg-surface hover:bg-bg-surface/80 border border-white/10 text-white font-medium text-sm transition-all duration-300 hover:border-accent-emerald/50 flex items-center gap-2"
-        >
-          <span class="w-2 h-2 rounded-full bg-accent-emerald"></span>
-          {t("hero.enterpriseCase")}
-        </a>
+        {#if t("hero.enterpriseCase")}
+          <a
+            href="#enterprise"
+            class="px-6 py-3.5 rounded-xl bg-bg-surface hover:bg-bg-surface/80 border border-white/10 text-white font-medium text-sm transition-all duration-300 hover:border-accent-emerald/50 flex items-center gap-2"
+          >
+            <span class="w-2 h-2 rounded-full bg-accent-emerald"></span>
+            {t("hero.enterpriseCase")}
+          </a>
+        {/if}
       </div>
 
       <!-- Telemetry Highlights Grid -->
