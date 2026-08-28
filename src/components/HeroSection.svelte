@@ -1,5 +1,6 @@
 <script lang="ts">
   import NetworkCanvas from "./NetworkCanvas.svelte";
+  import SplitFlapText from "./SplitFlapText.svelte";
   import { t } from "../i18n/index";
 </script>
 
@@ -10,7 +11,7 @@
       <!-- Release Badge -->
       <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-xs font-mono text-accent-cyan backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
-        <span>{t("hero.badge")}</span>
+        <SplitFlapText text={t("hero.badge")} duration={1200} />
         {#if t("hero.partners")}
           <span class="text-white/30">|</span>
           <span class="text-white/80">{t("hero.partners")}</span>
@@ -18,12 +19,12 @@
       </div>
 
       <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-        {t("hero.title1")} <br />
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-mono">
+        <SplitFlapText text={t("hero.title1")} duration={1500} /> <br />
         <span class="bg-gradient-to-r from-accent-cyan via-accent-emerald to-accent-orange bg-clip-text text-transparent glow-cyan">
-          {t("hero.titleGradient")}
+          <SplitFlapText text={t("hero.titleGradient")} duration={1500} delay={100} />
         </span>
-        <br />{t("hero.title2")}
+        <br /><SplitFlapText text={t("hero.title2")} duration={1500} delay={200} />
       </h1>
 
       <!-- Subtitle -->
