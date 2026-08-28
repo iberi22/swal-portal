@@ -6,11 +6,28 @@
     class?: string;
   }
 
-  let { text = '', duration = 1500, delay = 0, class: className = '' }: Props = $props();
+  let { text = '', duration = 1800, delay = 0, class: className = '' }: Props = $props();
 
-  const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&*+=-/_:;~';
+  const GLYPHS = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#$%&*+=-/_:;~';
   let displayText = $state(text);
   let isFlapping = $state(false);
+
+  function getRandomGlyph() {
+    return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+  }
+
+  function getScrambledString(target: string): string {
+    let s = '';
+    for (let i = 0; i < target.length; i++) {
+      const c = target[i];
+      if (c === ' ' || c === '\n' || c === '\t' || c === '.' || c === ',' || c === '—' || c === '-') {
+        s += c;
+      } else {
+        s += getRandomGlyph();
+      }
+    }
+    return s;
+  }
 
   function runFlap(targetText: string) {
     if (typeof window === 'undefined' || !targetText) {
@@ -19,45 +36,50 @@
     }
 
     isFlapping = true;
+    displayText = getScrambledString(targetText);
+
     const len = targetText.length;
-    let startTimestamp: number | null = null;
+    const startTimestamp = performance.now();
     let animId: number;
+    let lastTick = 0;
 
     function frame(now: number) {
-      if (!startTimestamp) startTimestamp = now + delay;
-      if (now < startTimestamp) {
-        animId = requestAnimationFrame(frame);
-        return;
-      }
-
       const elapsed = now - startTimestamp;
-      const progress = Math.min(elapsed / duration, 1);
+      
+      if (now - lastTick > 35 || elapsed >= duration) {
+        lastTick = now;
 
-      let output = '';
-      for (let i = 0; i < len; i++) {
-        const targetChar = targetText[i];
-        if (targetChar === ' ' || targetChar === '\n' || targetChar === '\t') {
-          output += targetChar;
-          continue;
+        const effectiveElapsed = Math.max(0, elapsed - delay);
+        const effectiveDuration = Math.max(100, duration - delay);
+        const progress = Math.min(effectiveElapsed / effectiveDuration, 1);
+
+        let output = '';
+        for (let i = 0; i < len; i++) {
+          const targetChar = targetText[i];
+          if (targetChar === ' ' || targetChar === '\n' || targetChar === '\t') {
+            output += targetChar;
+            continue;
+          }
+
+          const lockProgress = (i + 1) / len;
+
+          if (elapsed >= delay && progress >= lockProgress) {
+            output += targetChar;
+          } else {
+            output += getRandomGlyph();
+          }
         }
 
-        const lockProgress = (i + 1) / len;
-        if (progress >= lockProgress) {
-          output += targetChar;
-        } else {
-          const randomChar = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
-          output += randomChar;
+        displayText = output;
+
+        if (progress >= 1 && elapsed >= duration) {
+          displayText = targetText;
+          isFlapping = false;
+          return;
         }
       }
 
-      displayText = output;
-
-      if (progress < 1) {
-        animId = requestAnimationFrame(frame);
-      } else {
-        displayText = targetText;
-        isFlapping = false;
-      }
+      animId = requestAnimationFrame(frame);
     }
 
     animId = requestAnimationFrame(frame);
@@ -85,9 +107,9 @@
     display: inline-block;
     letter-spacing: normal;
     transition: color 0.15s ease;
+    font-variant-numeric: tabular-nums;
   }
   .split-flap-root.flapping {
-    font-feature-settings: 'tnum';
-    text-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
   }
 </style>
