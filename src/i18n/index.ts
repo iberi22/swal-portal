@@ -1,14 +1,18 @@
 import { writable, get } from "svelte/store";
 import { TRANSLATIONS, type SupportedLanguage, LANGUAGE_OPTIONS } from "./translations";
 
+export type ThemeMode = "dark" | "light" | "system";
+
 export const currentLang = writable<SupportedLanguage>("en");
+export const currentTheme = writable<ThemeMode>("system");
 
 if (typeof window !== "undefined") {
-  const saved = localStorage.getItem("swal_lang") as SupportedLanguage;
-  if (saved && TRANSLATIONS[saved]) {
-    setLanguage(saved);
+  // --- Language Initialization & Auto-Detection ---
+  const savedLang = localStorage.getItem("swal_lang") as SupportedLanguage;
+  if (savedLang && TRANSLATIONS[savedLang]) {
+    setLanguage(savedLang);
   } else {
-    // Auto-detect from browser
+    // Auto-detect browser/system language
     const browserLangs = navigator.languages || [navigator.language || "en"];
     let detected: SupportedLanguage = "en";
     for (const raw of browserLangs) {
@@ -20,6 +24,17 @@ if (typeof window !== "undefined") {
     }
     setLanguage(detected);
   }
+
+  // --- Theme Initialization & Auto-Detection ---
+  const savedTheme = (localStorage.getItem("swal_theme") as ThemeMode) || "system";
+  setTheme(savedTheme);
+
+  // System theme preference change listener
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (get(currentTheme) === "system") {
+      applyThemeToDOM("system");
+    }
+  });
 }
 
 export function setLanguage(lang: SupportedLanguage) {
@@ -33,6 +48,28 @@ export function setLanguage(lang: SupportedLanguage) {
   }
 }
 
+export function setTheme(mode: ThemeMode) {
+  currentTheme.set(mode);
+  if (typeof window !== "undefined") {
+    localStorage.setItem("swal_theme", mode);
+    applyThemeToDOM(mode);
+  }
+}
+
+function applyThemeToDOM(mode: ThemeMode) {
+  const isDark =
+    mode === "dark" ||
+    (mode === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  if (isDark) {
+    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("light");
+  } else {
+    document.documentElement.classList.add("light");
+    document.documentElement.classList.remove("dark");
+  }
+}
+
 export function t(key: string): string {
   let lang = "en";
   try {
@@ -41,7 +78,7 @@ export function t(key: string): string {
     lang = "en";
   }
   const dict = TRANSLATIONS[lang] || TRANSLATIONS["en"];
-  return dict[key] || TRANSLATIONS["en"]?.[key] || "";
+  return dict[key] || TRANSLATIONS["en"]?.[key] || key;
 }
 
 export { LANGUAGE_OPTIONS, type SupportedLanguage };

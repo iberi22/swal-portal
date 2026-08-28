@@ -2,70 +2,58 @@
   import { t } from "../i18n/index";
 
   let currentCmd = $state("swal node status");
-  let terminalOutput = $state<string[]>([
-    "SWAL Mesh Core v1.0.0-PROD (Linux x86_64)",
-    "Connected to P2P Edge-Mesh via ML-DSA-65 post-quantum transport.",
+
+  let terminalOutput = $derived<string[]>([
+    t("terminal.welcome1"),
+    t("terminal.welcome2"),
     "",
-    "[✓] Xavier Memory Core: ONLINE (:8006)",
-    "[✓] Local CRDT Storage: SQLite-vec sync OK",
-    "[✓] GPU Acceleration: NVIDIA RTX / WebGPU Active",
-    "[✓] ISO 27001 Controls: SGSI Active (Encrypted Blobs)",
+    t("terminal.onlineXavier"),
+    t("terminal.onlineStorage"),
+    t("terminal.onlineGpu"),
+    t("terminal.onlineIso"),
     "",
-    "Type \"help\" to view available cybernetic commands."
+    t("terminal.typeHelp")
   ]);
 
-  const commands: Record<string, string[]> = {
-    "help": [
-      "Available Commands:",
-      "  swal node status     - Display local mesh node telemetry",
-      "  xavier memory query  - Inspect cognitive memory vectors",
-      "  mesh peers list      - List connected P2P mesh nodes",
-      "  gpu benchmark        - Run local on-device inference test",
-      "  clear                - Clear terminal screen"
-    ],
-    "swal node status": [
-      "--- SWAL LOCAL NODE STATUS ---",
-      "Node ID: swal-node-9f82a1e04b77",
-      "Network Topology: P2P Mesh (Direct + Tor Onion fallback)",
-      "Storage: 42.8 MB (Local Encrypted SQLite-vec)",
-      "Active Peers: 124 (Chile, Colombia, US, EU)",
-      "Karma Score: 1,480 points (Soulbound)",
-      "Status: HEALTHY (Uptime: 99.98%)"
-    ],
-    "xavier memory query": [
-      "--- XAVIER COGNITIVE GRAPH QUERY ---",
-      "Query: \"Ecosystem architecture and P2P mesh protocols\"",
-      "[Result 1] apps/shelf (similarity: 0.94) -> Inventory & POS P2P local-first",
-      "[Result 2] cores/edge-mesh (similarity: 0.91) -> CRDT P2P data plane",
-      "[Result 3] docs/SWAL/COMMERCIAL_STRATEGY.md (similarity: 0.89) -> ISO compliance & zero paywalls"
-    ],
-    "mesh peers list": [
-      "--- CONNECTED P2P PEERS ---",
-      "1. [Chile] node-antiago (Community) -> 12ms",
-      "2. [Colombia] swal-genesis-bela (Core Node) -> 8ms",
-      "3. [Germany] peer-node-berlin (Community) -> 64ms",
-      "4. [Japan] peer-node-tokyo (Community) -> 110ms"
-    ],
-    "gpu benchmark": [
-      "--- ON-DEVICE GPU BENCHMARK ---",
-      "Device: Hardware WebGPU Engine",
-      "Inference Engine: Ollama / wgpu Native",
-      "Throughput: 84.6 tokens/sec (Llama-3-8B-Instruct-Q4)",
-      "Cloud Tokens Consumed: 0 (Cost: $0.00)"
-    ]
-  };
+  let customLogs = $state<string[]>([]);
 
   function runCommand(cmd: string) {
     const trimmed = cmd.trim().toLowerCase();
     if (trimmed === "clear") {
-      terminalOutput = [];
+      customLogs = [];
       return;
     }
 
-    terminalOutput = [
-      ...terminalOutput,
+    let response: string[] = [];
+    if (trimmed === "help") {
+      response = t("terminal.cmdHelpDesc").split("\n");
+    } else if (trimmed === "swal node status") {
+      response = [
+        t("terminal.nodeStatusTitle"),
+        "Node ID: swal-node-9f82a1e04b77",
+        t("terminal.netTopology"),
+        t("terminal.storageLabel"),
+        t("terminal.activePeers"),
+        t("terminal.karmaScore"),
+        t("terminal.statusHealthy")
+      ];
+    } else if (trimmed === "xavier memory query") {
+      response = [
+        t("terminal.queryTitle"),
+        ...t("terminal.queryText").split("\n")
+      ];
+    } else if (trimmed === "mesh peers list") {
+      response = t("terminal.peersTitle").split("\n");
+    } else if (trimmed === "gpu benchmark") {
+      response = t("terminal.gpuTitle").split("\n");
+    } else {
+      response = [t("terminal.cmdNotFound")];
+    }
+
+    customLogs = [
+      ...customLogs,
       `$ ${cmd}`,
-      ...(commands[trimmed] || [`Error: Command "${cmd}" not recognized. Type "help" for manual.`]),
+      ...response,
       ""
     ];
   }
@@ -108,6 +96,12 @@
       <!-- Terminal Body -->
       <div class="p-6 space-y-1 max-h-96 overflow-y-auto bg-bg-void/90 text-text-secondary">
         {#each terminalOutput as line}
+          <div class="leading-relaxed" class:text-accent-cyan={line.startsWith("$")} class:text-accent-emerald={line.includes("[✓]") || line.includes("HEALTHY")}>
+            {line}
+          </div>
+        {/each}
+
+        {#each customLogs as line}
           <div class="leading-relaxed" class:text-accent-cyan={line.startsWith("$")} class:text-accent-emerald={line.includes("[✓]") || line.includes("HEALTHY")}>
             {line}
           </div>
