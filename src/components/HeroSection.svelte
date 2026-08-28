@@ -52,18 +52,26 @@
       </div>
 
       <!-- Telemetry Highlights Grid -->
-      <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
-        <div class="space-y-1">
-          <div class="text-xl md:text-2xl font-bold font-mono text-white">100k</div>
-          <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statNodes")}</div>
+      <div class="space-y-3 pt-6 border-t border-white/10">
+        <div class="flex items-center justify-between text-[11px] font-mono">
+          <span class="text-text-muted uppercase tracking-wider">Telemetría de Red</span>
+          <span class="px-2 py-0.5 rounded bg-accent-orange/10 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold tracking-widest">
+            [ Datos Simulados / Benchmark ]
+          </span>
         </div>
-        <div class="space-y-1">
-          <div class="text-xl md:text-2xl font-bold font-mono text-accent-emerald">&lt; 15 ms</div>
-          <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statSync")}</div>
-        </div>
-        <div class="space-y-1">
-          <div class="text-xl md:text-2xl font-bold font-mono text-accent-orange">ISO 27001</div>
-          <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statIso")}</div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="space-y-1">
+            <div class="text-xl md:text-2xl font-bold font-mono text-white">100k</div>
+            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statNodes")}</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xl md:text-2xl font-bold font-mono text-accent-emerald">&lt; 15 ms</div>
+            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statSync")}</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xl md:text-2xl font-bold font-mono text-accent-orange">ISO 27001</div>
+            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statIso")}</div>
+          </div>
         </div>
       </div>
     </div>
