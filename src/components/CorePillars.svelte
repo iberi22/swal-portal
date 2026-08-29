@@ -1,14 +1,19 @@
 <script lang="ts">
   import { t } from "../i18n/index";
 
-  const cores = [
+  let cores = $derived([
     {
       id: "xavier",
       icon: "🧠",
-      name: "Xavier",
-      tagline: "Cognitive Agentic Memory Engine",
-      description: "Unified high-performance memory daemon in Rust. Combines multi-tier vector indexing, GraphRAG knowledge graphs, and sealed pack verification to ensure agents never lose context across sessions.",
-      features: ["L0-L3 Memory Hierarchy", "SQLite-vec & Embeddings", "GraphRAG Context", "XTSP / MCP Server"],
+      name: t("cores.xavier.name"),
+      tagline: t("cores.xavier.tagline"),
+      description: t("cores.xavier.desc"),
+      features: [
+        t("cores.xavier.feat1"),
+        t("cores.xavier.feat2"),
+        t("cores.xavier.feat3"),
+        t("cores.xavier.feat4")
+      ],
       color: "border-accent-cyan/30 text-accent-cyan",
       badge: "Port :8006",
       github: "https://github.com/iberi22/xavier"
@@ -16,10 +21,15 @@
     {
       id: "edge-mesh",
       icon: "🌐",
-      name: "edge-mesh",
-      tagline: "P2P CRDT & Post-Quantum Data Plane",
-      description: "Decentralized peer-to-peer transport layer syncing devices without central servers. Implements state-based CRDTs, multi-tenant namespaces, and post-quantum identity (ML-DSA-65 / ML-KEM-768).",
-      features: ["State-based CRDT Sync", "Quantum-Safe Cryptography", "Tor & Onion Routing", "Zero Cloud Dependency"],
+      name: t("cores.edgeMesh.name"),
+      tagline: t("cores.edgeMesh.tagline"),
+      description: t("cores.edgeMesh.desc"),
+      features: [
+        t("cores.edgeMesh.feat1"),
+        t("cores.edgeMesh.feat2"),
+        t("cores.edgeMesh.feat3"),
+        t("cores.edgeMesh.feat4")
+      ],
       color: "border-accent-emerald/30 text-accent-emerald",
       badge: "Libp2p / Rust",
       github: "https://github.com/iberi22/edge-mesh"
@@ -27,10 +37,15 @@
     {
       id: "agent-runner",
       icon: "🤖",
-      name: "swal-agent-runner",
-      tagline: "Autonomous Sandboxed Agent Engine",
-      description: "Deterministic execution harness for autonomous AI agents. Features complete virtual filesystem (VFS) isolation, capability grants, and GitCore 3.8 parallel task delegation.",
-      features: ["VFS Sandboxing", "GitCore 3.8 Protocol", "WASM Extension Hooks", "Autonomous Task Waves"],
+      name: t("cores.agentRunner.name"),
+      tagline: t("cores.agentRunner.tagline"),
+      description: t("cores.agentRunner.desc"),
+      features: [
+        t("cores.agentRunner.feat1"),
+        t("cores.agentRunner.feat2"),
+        t("cores.agentRunner.feat3"),
+        t("cores.agentRunner.feat4")
+      ],
       color: "border-accent-orange/30 text-accent-orange",
       badge: "VFS Isolation",
       github: "https://github.com/iberi22/swal-agent-runner"
@@ -38,15 +53,20 @@
     {
       id: "swal-ui",
       icon: "🎨",
-      name: "@swal/ui",
-      tagline: "Hive Dark Modular Design System",
-      description: "Canonical design system engineered in Svelte 5 and Tailwind CSS 4. Standardizes visual tokens, accessible cybernetic HUDs, and unified cross-platform interfaces.",
-      features: ["Svelte 5 Runes Native", "Hive Dark Design Tokens", "WCAG AAA Accessibility", "Modular HUD Widgets"],
+      name: t("cores.swalUi.name"),
+      tagline: t("cores.swalUi.tagline"),
+      description: t("cores.swalUi.desc"),
+      features: [
+        t("cores.swalUi.feat1"),
+        t("cores.swalUi.feat2"),
+        t("cores.swalUi.feat3"),
+        t("cores.swalUi.feat4")
+      ],
       color: "border-purple-500/30 text-purple-400",
       badge: "Svelte 5 / Tokens",
       github: "https://github.com/iberi22/swal-ui"
     }
-  ];
+  ]);
 </script>
 
 <section id="cores" class="py-24 px-6 relative border-t border-white/5">

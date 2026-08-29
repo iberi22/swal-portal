@@ -1,6 +1,20 @@
 <script lang="ts">
   import { ISO_STANDARDS } from "../data/ecosystem";
   import { t } from "../i18n/index";
+
+  let localizedStandards = $derived(
+    ISO_STANDARDS.map(std => {
+      const codeKey = std.code.split(" ")[1]?.toLowerCase().replace(":", "") || std.code.toLowerCase();
+      const keyPrefix = `iso.${codeKey}`;
+      return {
+        ...std,
+        name: t(`${keyPrefix}.name`) || std.name,
+        coverage: t(`${keyPrefix}.coverage`) || std.coverage,
+        desc: t(`${keyPrefix}.desc`) || std.desc,
+        badge: t(`${keyPrefix}.badge`) || std.badge
+      };
+    })
+  );
 </script>
 
 <section id="iso" class="py-24 px-6 relative bg-bg-dark/40 border-t border-white/5">
@@ -20,7 +34,7 @@
 
     <!-- ISO Cards Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {#each ISO_STANDARDS as std}
+      {#each localizedStandards as std}
         <div class="glass-panel p-6 space-y-4 flex flex-col justify-between hover:border-accent-orange/40 transition-all duration-300">
           <div class="space-y-3">
             <div class="flex items-center justify-between">

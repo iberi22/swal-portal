@@ -1,8 +1,18 @@
 <script lang="ts">
-  import { currentLang, setLanguage, t, LANGUAGE_OPTIONS, type SupportedLanguage } from "../i18n/index";
+  import {
+    currentLang,
+    setLanguage,
+    currentTheme,
+    setTheme,
+    t,
+    LANGUAGE_OPTIONS,
+    type SupportedLanguage,
+    type ThemeMode
+  } from "../i18n/index";
 
   let isMobileMenuOpen = $state(false);
   let isLangMenuOpen = $state(false);
+  let isThemeMenuOpen = $state(false);
 
   function toggleMenu() {
     isMobileMenuOpen = !isMobileMenuOpen;
@@ -11,6 +21,11 @@
   function changeLanguage(code: SupportedLanguage) {
     setLanguage(code);
     isLangMenuOpen = false;
+  }
+
+  function changeTheme(mode: ThemeMode) {
+    setTheme(mode);
+    isThemeMenuOpen = false;
   }
 </script>
 
@@ -45,11 +60,57 @@
 
     <!-- Header Actions -->
     <div class="hidden md:flex items-center gap-3">
+      <!-- Theme Selector Dropdown -->
+      <div class="relative">
+        <button
+          onclick={() => { isThemeMenuOpen = !isThemeMenuOpen; isLangMenuOpen = false; }}
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-bg-surface border border-white/10 text-xs font-mono text-text-secondary hover:text-white hover:border-accent-cyan/40 transition-colors cursor-pointer"
+          aria-label="Toggle Theme"
+        >
+          <span>
+            {#if $currentTheme === "dark"}🌙{:else if $currentTheme === "light"}☀️{:else}💻{/if}
+          </span>
+          <span class="capitalize text-[11px]">
+            {t(`theme.${$currentTheme}`)}
+          </span>
+          <svg class="w-3 h-3 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {#if isThemeMenuOpen}
+          <div class="absolute right-0 mt-2 w-36 rounded-xl bg-bg-surface border border-white/10 shadow-2xl py-1 z-50 backdrop-blur-2xl">
+            <button
+              onclick={() => changeTheme("dark")}
+              class="w-full text-left px-4 py-2 text-xs font-mono flex items-center justify-between hover:bg-accent-cyan/10 hover:text-accent-cyan transition-colors cursor-pointer"
+              class:text-accent-cyan={$currentTheme === "dark"}
+            >
+              <span>🌙 {t("theme.dark")}</span>
+            </button>
+            <button
+              onclick={() => changeTheme("light")}
+              class="w-full text-left px-4 py-2 text-xs font-mono flex items-center justify-between hover:bg-accent-cyan/10 hover:text-accent-cyan transition-colors cursor-pointer"
+              class:text-accent-cyan={$currentTheme === "light"}
+            >
+              <span>☀️ {t("theme.light")}</span>
+            </button>
+            <button
+              onclick={() => changeTheme("system")}
+              class="w-full text-left px-4 py-2 text-xs font-mono flex items-center justify-between hover:bg-accent-cyan/10 hover:text-accent-cyan transition-colors cursor-pointer"
+              class:text-accent-cyan={$currentTheme === "system"}
+            >
+              <span>💻 {t("theme.auto")}</span>
+            </button>
+          </div>
+        {/if}
+      </div>
+
       <!-- Language Dropdown -->
       <div class="relative">
         <button
-          onclick={() => isLangMenuOpen = !isLangMenuOpen}
+          onclick={() => { isLangMenuOpen = !isLangMenuOpen; isThemeMenuOpen = false; }}
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-bg-surface border border-white/10 text-xs font-mono text-text-secondary hover:text-white hover:border-accent-cyan/40 transition-colors cursor-pointer"
+          aria-label="Select Language"
         >
           <span>🌐</span>
           <span class="uppercase font-bold">{$currentLang}</span>
@@ -59,7 +120,7 @@
         </button>
 
         {#if isLangMenuOpen}
-          <div class="absolute right-0 mt-2 w-40 rounded-xl bg-bg-surface border border-white/10 shadow-2xl py-1 z-50 backdrop-blur-2xl">
+          <div class="absolute right-0 mt-2 w-48 max-h-80 overflow-y-auto rounded-xl bg-bg-surface border border-white/10 shadow-2xl py-1 z-50 backdrop-blur-2xl">
             {#each LANGUAGE_OPTIONS as opt}
               <button
                 onclick={() => changeLanguage(opt.code as SupportedLanguage)}
@@ -67,7 +128,12 @@
                 class:text-accent-cyan={$currentLang === opt.code}
                 class:font-bold={$currentLang === opt.code}
               >
-                <span>{opt.native}</span>
+                <div class="flex items-center gap-2">
+                  <span>{opt.native}</span>
+                  {#if opt.dir === "rtl"}
+                    <span class="text-[9px] px-1 rounded bg-accent-orange/20 text-accent-orange">RTL</span>
+                  {/if}
+                </div>
                 <span class="text-[10px] text-text-muted uppercase">{opt.code}</span>
               </button>
             {/each}
@@ -136,6 +202,30 @@
             {opt.native}
           </button>
         {/each}
+      </div>
+
+      <div class="pt-2 flex gap-2">
+        <button
+          onclick={() => changeTheme("dark")}
+          class="px-2.5 py-1 rounded bg-bg-surface border border-white/10 text-[10px] font-mono text-text-secondary"
+          class:text-accent-cyan={$currentTheme === "dark"}
+        >
+          🌙 Dark
+        </button>
+        <button
+          onclick={() => changeTheme("light")}
+          class="px-2.5 py-1 rounded bg-bg-surface border border-white/10 text-[10px] font-mono text-text-secondary"
+          class:text-accent-cyan={$currentTheme === "light"}
+        >
+          ☀️ Light
+        </button>
+        <button
+          onclick={() => changeTheme("system")}
+          class="px-2.5 py-1 rounded bg-bg-surface border border-white/10 text-[10px] font-mono text-text-secondary"
+          class:text-accent-cyan={$currentTheme === "system"}
+        >
+          💻 Auto
+        </button>
       </div>
     </div>
   {/if}

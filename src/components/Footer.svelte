@@ -22,7 +22,7 @@
 
     <!-- Quick Links -->
     <div class="space-y-3">
-      <div class="font-bold text-white uppercase tracking-wider text-xs">Ecosystem Links</div>
+      <div class="font-bold text-white uppercase tracking-wider text-xs">{t("footer.linksTitle")}</div>
       <ul class="space-y-2 text-text-muted">
         <li><a href="https://saberparatodos.space" target="_blank" class="hover:text-accent-cyan transition-colors">SaberParaTodos</a></li>
         <li><a href="https://estante-inventario.vercel.app" target="_blank" class="hover:text-accent-cyan transition-colors">Shelf POS</a></li>
@@ -33,7 +33,7 @@
 
     <!-- Governance & Standards -->
     <div class="space-y-3">
-      <div class="font-bold text-white uppercase tracking-wider text-xs">Security & Standards</div>
+      <div class="font-bold text-white uppercase tracking-wider text-xs">{t("footer.securityTitle")}</div>
       <ul class="space-y-2 text-text-muted">
         <li><span class="text-accent-emerald">✔</span> ISO 27001:2022 (ISMS)</li>
         <li><span class="text-accent-emerald">✔</span> ISO 27701:2019 (PIMS)</li>

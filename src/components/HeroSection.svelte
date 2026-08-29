@@ -24,7 +24,9 @@
         <span class="bg-gradient-to-r from-accent-cyan via-accent-emerald to-accent-orange bg-clip-text text-transparent glow-cyan">
           <SplitFlapText text={t("hero.titleGradient")} duration={1500} delay={100} />
         </span>
-        <br /><SplitFlapText text={t("hero.title2")} duration={1500} delay={200} />
+        {#if t("hero.title2")}
+          <br /><SplitFlapText text={t("hero.title2")} duration={1500} delay={200} />
+        {/if}
       </h1>
 
       <!-- Subtitle -->
@@ -54,9 +56,9 @@
       <!-- Telemetry Highlights Grid -->
       <div class="space-y-3 pt-6 border-t border-white/10">
         <div class="flex items-center justify-between text-[11px] font-mono">
-          <span class="text-text-muted uppercase tracking-wider">Telemetría de Red</span>
+          <span class="text-text-muted uppercase tracking-wider">{t("hero.telemetryTitle")}</span>
           <span class="px-2 py-0.5 rounded bg-accent-orange/10 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold tracking-widest">
-            [ Datos Simulados / Benchmark ]
+            {t("hero.telemetrySimulated")}
           </span>
         </div>
         <div class="grid grid-cols-3 gap-4">
