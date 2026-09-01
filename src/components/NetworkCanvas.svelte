@@ -344,6 +344,9 @@
       <span class="font-bold">EDGE-MESH P2P</span>
       <span class="text-white/40">|</span>
       <span>TOPOLOGY: DECENTRALIZED</span>
+      <span class="px-2 py-0.5 rounded bg-accent-orange/20 text-accent-orange border border-accent-orange/30 text-[9px] uppercase tracking-wider font-bold">
+        DATOS SIMULADOS
+      </span>
     </div>
     <div class="flex flex-wrap items-center gap-4 text-[11px] font-mono text-text-secondary">
       <span class="flex items-center gap-1">

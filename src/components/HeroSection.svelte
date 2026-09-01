@@ -1,5 +1,6 @@
 <script lang="ts">
   import NetworkCanvas from "./NetworkCanvas.svelte";
+  import SplitFlapText from "./SplitFlapText.svelte";
   import { t } from "../i18n/index";
 </script>
 
@@ -10,7 +11,7 @@
       <!-- Release Badge -->
       <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-xs font-mono text-accent-cyan backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
-        <span>{t("hero.badge")}</span>
+        <SplitFlapText text={t("hero.badge")} duration={1200} />
         {#if t("hero.partners")}
           <span class="text-white/30">|</span>
           <span class="text-white/80">{t("hero.partners")}</span>
@@ -18,12 +19,14 @@
       </div>
 
       <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-        {t("hero.title1")} <br />
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-mono">
+        <SplitFlapText text={t("hero.title1")} duration={1500} /> <br />
         <span class="bg-gradient-to-r from-accent-cyan via-accent-emerald to-accent-orange bg-clip-text text-transparent glow-cyan">
-          {t("hero.titleGradient")}
+          <SplitFlapText text={t("hero.titleGradient")} duration={1500} delay={100} />
         </span>
-        <br />{t("hero.title2")}
+        {#if t("hero.title2")}
+          <br /><SplitFlapText text={t("hero.title2")} duration={1500} delay={200} />
+        {/if}
       </h1>
 
       <!-- Subtitle -->
@@ -51,18 +54,26 @@
       </div>
 
       <!-- Telemetry Highlights Grid -->
-      <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
-        <div class="space-y-1">
-          <div class="text-xl md:text-2xl font-bold font-mono text-white">100k</div>
-          <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statNodes")}</div>
+      <div class="space-y-3 pt-6 border-t border-white/10">
+        <div class="flex items-center justify-between text-[11px] font-mono">
+          <span class="text-text-muted uppercase tracking-wider">{t("hero.telemetryTitle")}</span>
+          <span class="px-2 py-0.5 rounded bg-accent-orange/10 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold tracking-widest">
+            {t("hero.telemetrySimulated")}
+          </span>
         </div>
-        <div class="space-y-1">
-          <div class="text-xl md:text-2xl font-bold font-mono text-accent-emerald">&lt; 15 ms</div>
-          <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statSync")}</div>
-        </div>
-        <div class="space-y-1">
-          <div class="text-xl md:text-2xl font-bold font-mono text-accent-orange">ISO 27001</div>
-          <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statIso")}</div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="space-y-1">
+            <div class="text-xl md:text-2xl font-bold font-mono text-white">100k</div>
+            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statNodes")}</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xl md:text-2xl font-bold font-mono text-accent-emerald">&lt; 15 ms</div>
+            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statSync")}</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-xl md:text-2xl font-bold font-mono text-accent-orange">ISO 27001</div>
+            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statIso")}</div>
+          </div>
         </div>
       </div>
     </div>

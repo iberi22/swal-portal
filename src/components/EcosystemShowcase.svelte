@@ -1,16 +1,33 @@
 <script lang="ts">
-  import { SWAL_APPS, type SwalApp } from "../data/ecosystem";
+  import { SWAL_APPS } from "../data/ecosystem";
   import { t } from "../i18n/index";
 
   let selectedCategory = $state<string>("all");
   let searchQuery = $state<string>("");
 
+  let localizedApps = $derived(
+    SWAL_APPS.map(app => {
+      const taglineKey = `app.${app.id}.tagline`;
+      const descKey = `app.${app.id}.desc`;
+      const statusKey = `status.${app.status}`;
+
+      return {
+        ...app,
+        translatedTagline: t(taglineKey) || app.tagline,
+        translatedDesc: t(descKey) || app.description,
+        translatedStatus: t(statusKey) || app.status
+      };
+    })
+  );
+
   let filteredApps = $derived(
-    SWAL_APPS.filter(app => {
+    localizedApps.filter(app => {
       const matchCategory = selectedCategory === "all" || app.category === selectedCategory;
-      const matchSearch = app.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          app.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          app.stack.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      const matchSearch =
+        app.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        app.translatedTagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        app.translatedDesc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        app.stack.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
       return matchCategory && matchSearch;
     })
   );
@@ -134,14 +151,6 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {#each filteredApps as app (app.id)}
         <div class="glass-panel p-6 flex flex-col justify-between space-y-6 hover:border-accent-cyan/40 transition-all duration-300 relative group">
-          <!-- Enterprise badge oculto: tripro.cl aún no lanzado
-          {#if app.isEnterpriseClient}
-            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-accent-emerald text-bg-void text-[10px] font-mono font-bold tracking-wider uppercase shadow-md">
-              ★ tripro.cl Enterprise
-            </div>
-          {/if}
-          -->
-
           <div class="space-y-4">
             <div class="flex items-center justify-between pt-1">
               <h3 class="text-xl font-bold text-white group-hover:text-accent-cyan transition-colors">
@@ -152,12 +161,12 @@
                 class:text-accent-cyan={app.status === "active"}
                 class:text-text-muted={app.status !== "production" && app.status !== "active"}
               >
-                {app.status}
+                {app.translatedStatus}
               </span>
             </div>
 
-            <p class="text-xs font-mono text-accent-cyan/80">{app.tagline}</p>
-            <p class="text-text-secondary text-xs leading-relaxed">{app.description}</p>
+            <p class="text-xs font-mono text-accent-cyan/80">{app.translatedTagline}</p>
+            <p class="text-text-secondary text-xs leading-relaxed">{app.translatedDesc}</p>
           </div>
 
           <div class="space-y-4 pt-4 border-t border-white/5">
