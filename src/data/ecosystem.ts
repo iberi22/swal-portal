@@ -199,17 +199,7 @@ export const SWAL_APPS: SwalApp[] = [
     status: "active",
     repoStatus: "invite",
   },
-  {
-    id: "software-factory",
-    name: "Software Factory",
-    tagline: "Autonomous Multi-Agent CI/CD Engine",
-    category: "core",
-    description: "Automated factory pipeline coordinating Jules, OpenCode, and local agents to deliver verifiable software features.",
-    stack: ["Rust", "GitCore 3.8", "Docker Sandboxes"],
-    status: "active",
-    repoStatus: "invite",
-  }
-];
+  ];
 
 export const ISO_STANDARDS = [
   {
