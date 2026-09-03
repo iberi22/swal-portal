@@ -5,10 +5,10 @@
   "private": true,
   "description": "SouthWest AI Labs (SWAL) - Sovereign Decentralized AI Network Portal",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "node ./node_modules/astro/bin/astro.mjs dev",
+    "build": "node ./node_modules/astro/bin/astro.mjs build",
+    "preview": "node ./node_modules/astro/bin/astro.mjs preview",
+    "astro": "node ./node_modules/astro/bin/astro.mjs"
   },
   "dependencies": {
     "@astrojs/svelte": "^9.0.1",
