@@ -153,9 +153,16 @@
         <div class="glass-panel p-6 flex flex-col justify-between space-y-6 hover:border-accent-cyan/40 transition-all duration-300 relative group">
           <div class="space-y-4">
             <div class="flex items-center justify-between pt-1">
-              <h3 class="text-xl font-bold text-white group-hover:text-accent-cyan transition-colors">
-                {app.name}
-              </h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-xl font-bold text-white group-hover:text-accent-cyan transition-colors">
+                  {app.name}
+                </h3>
+                {#if app.isFlagship || app.id === "xavier"}
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-accent-cyan/20 border border-accent-cyan text-accent-cyan shadow-sm shadow-accent-cyan/30 tracking-wider">
+                    ★ PROYECTO ESTRELLA
+                  </span>
+                {/if}
+              </div>
               <span class="px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider border border-white/10"
                 class:text-accent-emerald={app.status === "production"}
                 class:text-accent-cyan={app.status === "active"}

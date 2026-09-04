@@ -10,6 +10,7 @@ export interface SwalApp {
   repoUrl?: string;
   liveUrl?: string;
   isEnterpriseClient?: boolean;
+  isFlagship?: boolean;
 }
 
 export const SWAL_APPS: SwalApp[] = [
@@ -37,6 +38,7 @@ export const SWAL_APPS: SwalApp[] = [
     status: "production",
     repoStatus: "public",
     repoUrl: "https://github.com/iberi22/xavier",
+    isFlagship: true,
   },
   {
     id: "edge-mesh",
@@ -147,6 +149,7 @@ export const SWAL_APPS: SwalApp[] = [
     status: "active",
     repoStatus: "invite",
   },
+  /* OCULTO: TikTokBoost (TICBOX)
   {
     id: "tiktboost",
     name: "TikTokBoost",
@@ -158,6 +161,7 @@ export const SWAL_APPS: SwalApp[] = [
     repoStatus: "invite",
     liveUrl: "https://tiktboost.vercel.app",
   },
+  */
   {
     id: "maloca",
     name: "Maloca",
@@ -179,6 +183,7 @@ export const SWAL_APPS: SwalApp[] = [
     repoStatus: "public",
     repoUrl: "https://github.com/iberi22/gastronomic-open-standard-GOS",
   },
+  /* OCULTO: Veedur-IA (SECOP Intelligence)
   {
     id: "veedur-ia",
     name: "Veedur-IA (SECOP Intelligence)",
@@ -190,6 +195,7 @@ export const SWAL_APPS: SwalApp[] = [
     repoStatus: "invite",
     isEnterpriseClient: true,
   },
+  */
   {
     id: "nido",
     name: "Nido",
