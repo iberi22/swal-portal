@@ -19,13 +19,16 @@
       </div>
 
       <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-mono">
-        <SplitFlapText text={t("hero.title1")} duration={1500} /> <br />
-        <span class="bg-gradient-to-r from-accent-cyan via-accent-emerald to-accent-orange bg-clip-text text-transparent" style="-webkit-filter: drop-shadow(0 0 14px rgba(6, 182, 212, 0.45)); filter: drop-shadow(0 0 14px rgba(6, 182, 212, 0.45));">
-          <SplitFlapText text={t("hero.titleGradient")} duration={1500} delay={100} />
-        </span>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] font-mono break-words">
+        <SplitFlapText text={t("hero.title1")} duration={1000} /> <br />
+        <SplitFlapText
+          text={t("hero.titleGradient")}
+          duration={1200}
+          delay={120}
+          class="bg-gradient-to-r from-accent-cyan via-accent-emerald to-accent-orange bg-clip-text text-transparent [filter:drop-shadow(0_0_16px_rgba(6,182,212,0.4))]"
+        />
         {#if t("hero.title2")}
-          <br /><SplitFlapText text={t("hero.title2")} duration={1500} delay={200} />
+          <br /><SplitFlapText text={t("hero.title2")} duration={1000} delay={250} />
         {/if}
       </h1>
 

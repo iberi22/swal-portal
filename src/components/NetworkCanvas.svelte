@@ -333,29 +333,29 @@
   });
 </script>
 
-<div class="relative w-full h-[520px] md:h-[680px] overflow-hidden rounded-2xl border border-white/10 bg-bg-dark/40 backdrop-blur-md select-none">
+<div class="relative w-full h-[380px] sm:h-[480px] md:h-[640px] overflow-hidden rounded-2xl border border-white/10 bg-bg-dark/40 backdrop-blur-md select-none">
   <!-- Canvas Container with cursor cue -->
   <div bind:this={container} class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"></div>
 
   <!-- HUD Telemetry Overlay -->
-  <div class="absolute top-6 left-6 flex flex-col gap-2 pointer-events-none z-10">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg-surface/80 border border-accent-cyan/30 text-xs font-mono text-accent-cyan backdrop-blur-md shadow-lg shadow-accent-cyan/5">
+  <div class="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-auto flex flex-col gap-2 pointer-events-none z-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg-surface/80 border border-accent-cyan/30 text-[11px] sm:text-xs font-mono text-accent-cyan backdrop-blur-md shadow-lg shadow-accent-cyan/5 w-fit">
       <span class="w-2 h-2 rounded-full bg-accent-cyan animate-ping"></span>
       <span class="font-bold">EDGE-MESH P2P</span>
-      <span class="text-white/40">|</span>
-      <span>TOPOLOGY: DECENTRALIZED</span>
-      <span class="px-2 py-0.5 rounded bg-accent-orange/20 text-accent-orange border border-accent-orange/30 text-[9px] uppercase tracking-wider font-bold">
+      <span class="text-white/40 hidden xs:inline">|</span>
+      <span class="hidden sm:inline">TOPOLOGY: DECENTRALIZED</span>
+      <span class="px-1.5 py-0.5 rounded bg-accent-orange/20 text-accent-orange border border-accent-orange/30 text-[9px] uppercase tracking-wider font-bold">
         DATOS SIMULADOS
       </span>
     </div>
-    <div class="flex flex-wrap items-center gap-4 text-[11px] font-mono text-text-secondary">
+    <div class="flex flex-wrap items-center gap-2 sm:gap-4 text-[10px] sm:text-[11px] font-mono text-text-secondary bg-bg-surface/60 sm:bg-transparent px-2.5 py-1.5 sm:p-0 rounded-xl sm:rounded-none backdrop-blur-sm sm:backdrop-blur-none w-fit">
       <span class="flex items-center gap-1">
         <span class="w-1.5 h-1.5 rounded-full bg-accent-emerald"></span>
-        Nodes: <strong class="text-white">{activePeersCount} peers</strong>
+        Nodes: <strong class="text-white">{activePeersCount}</strong>
       </span>
       <span class="flex items-center gap-1">
         <span class="w-1.5 h-1.5 rounded-full bg-accent-orange"></span>
-        CRDT Sync: <strong class="text-white">{syncRate}</strong>
+        Sync: <strong class="text-white">{syncRate}</strong>
       </span>
       <span class="flex items-center gap-1">
         <span class="w-1.5 h-1.5 rounded-full bg-accent-cyan"></span>
@@ -365,8 +365,8 @@
   </div>
 
   <!-- Bottom Legend & Drag Cue -->
-  <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none z-10">
-    <span class="text-[10px] font-mono text-text-muted hidden sm:inline-block">
+  <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex items-center justify-between pointer-events-none z-10">
+    <span class="text-[10px] font-mono text-text-muted">
       ❖ Interactive 3D Mesh · Drag to rotate
     </span>
     <div class="hidden md:flex items-center gap-3 px-4 py-2 rounded-xl bg-bg-surface/80 border border-white/10 text-xs font-mono text-text-muted backdrop-blur-md">
