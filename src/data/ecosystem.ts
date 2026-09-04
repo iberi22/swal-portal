@@ -54,11 +54,11 @@ export const SWAL_APPS: SwalApp[] = [
   {
     id: "swal-agent-runner",
     name: "swal-agent-runner",
-    tagline: "Autonomous Agent Runtime & VFS Sandboxes",
+    tagline: "Autonomous Agent Runtime & VFS Sandboxes (POC & Demo)",
     category: "core",
-    description: "Secure, sandboxed execution runtime for local AI agents with virtual filesystem isolation, role-based orchestration, and GitCore 3.8 task execution.",
+    description: "Proof of concept and interactive demo runtime for local AI agents with virtual filesystem isolation, role-based orchestration, and GitCore 3.8 task execution.",
     stack: ["Rust", "VFS", "WASM", "GitCore 3.8"],
-    status: "production",
+    status: "beta",
     repoStatus: "public",
     repoUrl: "https://github.com/iberi22/swal-agent-runner",
   },
@@ -139,6 +139,7 @@ export const SWAL_APPS: SwalApp[] = [
     status: "active",
     repoStatus: "invite",
   },
+  /* OCULTO: SWAL Vault
   {
     id: "swal-vault",
     name: "SWAL Vault",
@@ -149,6 +150,7 @@ export const SWAL_APPS: SwalApp[] = [
     status: "active",
     repoStatus: "invite",
   },
+  */
   /* OCULTO: TikTokBoost (TICBOX)
   {
     id: "tiktboost",
@@ -196,6 +198,7 @@ export const SWAL_APPS: SwalApp[] = [
     isEnterpriseClient: true,
   },
   */
+  /* OCULTO: Nido
   {
     id: "nido",
     name: "Nido",
@@ -206,6 +209,7 @@ export const SWAL_APPS: SwalApp[] = [
     status: "active",
     repoStatus: "invite",
   },
+  */
   ];
 
 export const ISO_STANDARDS = [
