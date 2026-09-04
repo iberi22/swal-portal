@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   interface Props {
     text: string;
     duration?: number;
@@ -9,10 +11,15 @@
   let { text = '', duration = 1800, delay = 0, class: className = '' }: Props = $props();
 
   const GLYPHS = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#$%&*+=-/_:;~';
+
+  // Render real text on SSR AND on initial client mount — no scramble flash.
   let displayText = $state(text);
   let isFlapping = $state(false);
+  let rootEl: HTMLSpanElement | undefined = $state();
+  let animId: number | null = null;
+  let cancelled = false;
 
-  function getRandomGlyph() {
+  function getRandomGlyph(): string {
     return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
   }
 
@@ -29,23 +36,45 @@
     return s;
   }
 
+  function stopFlap() {
+    cancelled = true;
+    if (animId !== null && typeof cancelAnimationFrame !== 'undefined') {
+      cancelAnimationFrame(animId);
+      animId = null;
+    }
+  }
+
   function runFlap(targetText: string) {
     if (typeof window === 'undefined' || !targetText) {
       displayText = targetText;
       return;
     }
 
-    isFlapping = true;
-    displayText = getScrambledString(targetText);
+    // Respect reduced-motion: skip animation entirely.
+    const prefersReduced =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced || duration <= 0) {
+      displayText = targetText;
+      isFlapping = false;
+      return;
+    }
 
+    cancelled = false;
+    isFlapping = true;
+
+    // Only scramble visually — never leave the DOM with stale scrambled text.
+    // We do a single tick of scramble, then resolve to targetText on lock.
     const len = targetText.length;
     const startTimestamp = performance.now();
-    let animId: number;
     let lastTick = 0;
+    let resolved = false;
 
     function frame(now: number) {
+      if (cancelled) return;
+
       const elapsed = now - startTimestamp;
-      
+
       if (now - lastTick > 35 || elapsed >= duration) {
         lastTick = now;
 
@@ -56,7 +85,7 @@
         let output = '';
         for (let i = 0; i < len; i++) {
           const targetChar = targetText[i];
-          if (targetChar === ' ' || targetChar === '\n' || targetChar === '\t') {
+          if (targetChar === ' ' || targetChar === '\n' || targetChar === '\t' || targetChar === '.' || targetChar === ',' || targetChar === '—' || targetChar === '-') {
             output += targetChar;
             continue;
           }
@@ -73,8 +102,11 @@
         displayText = output;
 
         if (progress >= 1 && elapsed >= duration) {
+          // Hard resolve: always end on the real text, no matter what.
           displayText = targetText;
           isFlapping = false;
+          resolved = true;
+          animId = null;
           return;
         }
       }
@@ -82,19 +114,68 @@
       animId = requestAnimationFrame(frame);
     }
 
-    animId = requestAnimationFrame(frame);
-    return () => cancelAnimationFrame(animId);
+    // Start with a single scramble tick so the user sees motion, but only
+    // when this component is actually visible in the viewport.
+    if (rootEl && typeof IntersectionObserver !== 'undefined') {
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting && !resolved) {
+              // Kick off the first scramble tick only now (when visible).
+              displayText = getScrambledString(targetText);
+              animId = requestAnimationFrame(frame);
+              io.disconnect();
+            }
+          }
+        },
+        { threshold: 0.1 },
+      );
+      io.observe(rootEl);
+      // Safety net: if observer never fires (e.g. already in viewport at mount
+      // before observe()), start anyway after one frame.
+      animId = requestAnimationFrame((t) => {
+        if (!resolved && !cancelled) {
+          displayText = getScrambledString(targetText);
+          animId = requestAnimationFrame(frame);
+        }
+        io.disconnect();
+      });
+    } else {
+      displayText = getScrambledString(targetText);
+      animId = requestAnimationFrame(frame);
+    }
+
+    // Hard safety net: even if RAF loop dies for any reason, force final text.
+    const safetyTimeout = window.setTimeout(() => {
+      if (!resolved && !cancelled) {
+        displayText = targetText;
+        isFlapping = false;
+        if (animId !== null) cancelAnimationFrame(animId);
+        animId = null;
+      }
+    }, duration + delay + 200);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(safetyTimeout);
+      if (animId !== null) cancelAnimationFrame(animId);
+      animId = null;
+    };
   }
 
   $effect(() => {
-    const cancel = runFlap(text);
+    // Track the text input reactively.
+    const target = text;
+    const cleanup = runFlap(target);
     return () => {
-      if (cancel) cancel();
+      stopFlap();
+      if (cleanup) cleanup();
     };
   });
 </script>
 
 <span
+  bind:this={rootEl}
   class={`split-flap-root ${className}`}
   class:flapping={isFlapping}
   aria-label={text}

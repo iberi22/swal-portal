@@ -21,7 +21,7 @@
       <!-- Main Headline -->
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-mono">
         <SplitFlapText text={t("hero.title1")} duration={1500} /> <br />
-        <span class="bg-gradient-to-r from-accent-cyan via-accent-emerald to-accent-orange bg-clip-text text-transparent glow-cyan">
+        <span class="bg-gradient-to-r from-accent-cyan via-accent-emerald to-accent-orange bg-clip-text text-transparent" style="-webkit-filter: drop-shadow(0 0 14px rgba(6, 182, 212, 0.45)); filter: drop-shadow(0 0 14px rgba(6, 182, 212, 0.45));">
           <SplitFlapText text={t("hero.titleGradient")} duration={1500} delay={100} />
         </span>
         {#if t("hero.title2")}
