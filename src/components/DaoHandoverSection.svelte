@@ -1,13 +1,15 @@
 <script lang="ts">
   import { t } from "../i18n/index";
 
-  let currentNodes = $state(14820);
-  let verifiedHumans = $state(28);
-  const targetNodes = 100000;
-  const targetHumans = 100;
+  // DAO operates as soon as up to 2 maintainer nodes are active: SWAL Genesis (1) + 1 peer promoted by Xavier
+  let currentMaintainers = $state(1); // SWAL Genesis node is active
+  let targetMaintainers = 2; // Threshold for active DAO quorum
 
-  let nodesPercent = $derived(((currentNodes / targetNodes) * 100).toFixed(1));
-  let humansPercent = $derived(((verifiedHumans / targetHumans) * 100).toFixed(1));
+  let scannedPeers = $state(14820);
+  let qualifiedPeers = $state(28);
+
+  let maintainersPercent = $derived(((currentMaintainers / targetMaintainers) * 100).toFixed(0));
+  let scanProgressPercent = $derived(((qualifiedPeers / 100) * 100).toFixed(1));
 </script>
 
 <section id="dao" class="py-24 px-6 relative bg-bg-dark/60 border-t border-white/5">
@@ -32,10 +34,10 @@
         <div class="space-y-3">
           <div class="flex justify-between items-baseline font-mono">
             <span class="text-xs text-text-secondary uppercase tracking-wider">{t("dao.activeNodes")}</span>
-            <span class="text-sm text-purple-400 font-bold">{currentNodes.toLocaleString()} / {targetNodes.toLocaleString()} ({nodesPercent}%)</span>
+            <span class="text-sm text-purple-400 font-bold">{currentMaintainers} / {targetMaintainers} ({maintainersPercent}%)</span>
           </div>
           <div class="w-full h-3 rounded-full bg-bg-void/80 overflow-hidden border border-white/10 p-0.5">
-            <div class="h-full rounded-full bg-gradient-to-r from-accent-cyan via-accent-emerald to-purple-500 transition-all duration-1000" style="width: {nodesPercent}%"></div>
+            <div class="h-full rounded-full bg-gradient-to-r from-accent-cyan via-accent-emerald to-purple-500 transition-all duration-1000" style="width: {maintainersPercent}%"></div>
           </div>
           <p class="text-[11px] font-mono text-text-muted">{t("dao.activeNodesReq")}</p>
         </div>
@@ -44,10 +46,10 @@
         <div class="space-y-3">
           <div class="flex justify-between items-baseline font-mono">
             <span class="text-xs text-text-secondary uppercase tracking-wider">{t("dao.humanNodes")}</span>
-            <span class="text-sm text-accent-emerald font-bold">{verifiedHumans} / {targetHumans} ({humansPercent}%)</span>
+            <span class="text-sm text-accent-emerald font-bold">{scannedPeers.toLocaleString()} Peers ({qualifiedPeers} Candidate Nodos)</span>
           </div>
           <div class="w-full h-3 rounded-full bg-bg-void/80 overflow-hidden border border-white/10 p-0.5">
-            <div class="h-full rounded-full bg-gradient-to-r from-accent-emerald to-accent-cyan transition-all duration-1000" style="width: {humansPercent}%"></div>
+            <div class="h-full rounded-full bg-gradient-to-r from-accent-emerald to-accent-cyan transition-all duration-1000" style="width: {scanProgressPercent}%"></div>
           </div>
           <p class="text-[11px] font-mono text-text-muted">{t("dao.humanNodesReq")}</p>
         </div>
@@ -82,12 +84,12 @@
         <!-- Concrete Milestones -->
         <div class="p-5 rounded-xl bg-bg-void/40 border border-white/10 space-y-2">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono text-purple-400 font-bold">GENESIS TO DAO GOALS</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Phase 1 Foundation</span>
+            <span class="text-xs font-mono text-purple-400 font-bold">DUAL-MAINTAINER GENESIS</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Phase 1 Activation</span>
           </div>
-          <div class="text-xl font-bold font-mono text-white">100k Nodes Target</div>
+          <div class="text-xl font-bold font-mono text-white">2 Maintainer Quorum</div>
           <p class="text-xs text-text-muted leading-relaxed">
-            Full protocol, smart contracts, and intellectual memory transferred to the community DAO once 100k active P2P nodes and 100 public human peers are verified.
+            Full DAO governance and protocol stewardship unlock as soon as 2 maintainer nodes are active: SWAL Genesis (active) and 1 peer node scanned and promoted by Xavier.
           </p>
         </div>
       </div>

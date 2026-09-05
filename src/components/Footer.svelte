@@ -39,7 +39,7 @@
         <li><span class="text-accent-emerald">✔</span> ISO 27701:2019 (PIMS)</li>
         <li><span class="text-accent-emerald">✔</span> ISO 42001:2023 (AI AIMS)</li>
         <li><span class="text-accent-cyan">✔</span> P2P Tor / Onion Transport</li>
-        <li><span class="text-purple-400">✔</span> 100k Node DAO Handover</li>
+        <li><span class="text-purple-400">✔</span> 2-Maintainer DAO Handover</li>
       </ul>
     </div>
   </div>
