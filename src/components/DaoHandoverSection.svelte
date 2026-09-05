@@ -55,20 +55,8 @@
         </div>
       </div>
 
-      <!-- Budget, Infrastructure & Node Telemetry Clarity -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/10">
-        <!-- Budget & Zero Burn Rate -->
-        <div class="p-5 rounded-xl bg-bg-void/40 border border-white/10 space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono text-accent-emerald font-bold">INFRASTRUCTURE BUDGET</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-emerald/20 text-accent-emerald">$0 Burn Rate</span>
-          </div>
-          <div class="text-xl font-bold font-mono text-white">$15 / year</div>
-          <p class="text-xs text-text-muted leading-relaxed">
-            Direct ICANN domain cost ($15/yr). Cloudflare Edge tier $0 free tier with $350k startup scale eligibility. Software license $0 forever.
-          </p>
-        </div>
-
+      <!-- Node Architecture & Decentralized Governance -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
         <!-- Node Economics & Distribution -->
         <div class="p-5 rounded-xl bg-bg-void/40 border border-white/10 space-y-2">
           <div class="flex items-center justify-between">
