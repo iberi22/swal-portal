@@ -15,7 +15,7 @@
         t("cores.xavier.feat4")
       ],
       color: "border-accent-cyan/30 text-accent-cyan",
-      badge: "Port :8006",
+      badge: "Cognitive Core",
       github: "https://github.com/iberi22/xavier"
     },
     {

@@ -45,15 +45,13 @@
         >
           {t("hero.exploreApps")}
         </a>
-        {#if t("hero.enterpriseCase")}
-          <a
-            href="#enterprise"
-            class="px-6 py-3.5 rounded-xl bg-bg-surface hover:bg-bg-surface/80 border border-white/10 text-white font-medium text-sm transition-all duration-300 hover:border-accent-emerald/50 flex items-center gap-2"
-          >
-            <span class="w-2 h-2 rounded-full bg-accent-emerald"></span>
-            {t("hero.enterpriseCase")}
-          </a>
-        {/if}
+        <a
+          href="#dao"
+          class="px-6 py-3.5 rounded-xl bg-bg-surface hover:bg-bg-surface/80 border border-white/10 text-white font-medium text-sm transition-all duration-300 hover:border-purple-500/50 flex items-center gap-2"
+        >
+          <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+          {t("nav.dao")}
+        </a>
       </div>
 
       <!-- Telemetry Highlights Grid -->

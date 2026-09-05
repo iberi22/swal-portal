@@ -65,7 +65,7 @@
           </div>
           <div class="text-xl font-bold font-mono text-white">100% On-Device</div>
           <p class="text-xs text-text-muted leading-relaxed">
-            Every user device operates as a sovereign mesh node (P2P CRDT). Optional Partner Cloud Node persistence at direct compute cost ($9/mo).
+            Every user device operates as a sovereign mesh node (P2P CRDT) with zero licensing costs. Optional Partner Cloud Node persistence available at direct infrastructure cost.
           </p>
         </div>
 
