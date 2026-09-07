@@ -14,17 +14,16 @@ export interface SwalApp {
 }
 
 export const SWAL_APPS: SwalApp[] = [
-  /* OCULTO: tripro.cl / ManteniApp aún no lanzado
+  /* OCULTO: caso enterprise (cliente NDA) / ManteniApp aún no lanzado
   {
     id: "manteniapp",
     name: "ManteniApp",
-    tagline: "Industrial Field Service Management SaaS (tripro.cl)",
+    tagline: "Industrial Field Service Management SaaS (enterprise client)",
     category: "enterprise",
-    description: "Enterprise FSM SaaS with AI diagnostics, digital approval workflows, and 100% offline-first operations for mining and heavy industry in Chile. First commercial deployment with strategic enterprise partner tripro.cl.",
+    description: "Enterprise FSM SaaS with AI diagnostics, digital approval workflows and offline-first operations for mining and heavy industry. Case study pending client authorization.",
     stack: ["TypeScript", "PWA", "Python", "PostgreSQL", "AI Diagnostics"],
-    status: "production",
+    status: "beta",
     repoStatus: "invite",
-    liveUrl: "https://tripro.cl/manteniapp",
     isEnterpriseClient: true,
   },
   */
@@ -243,18 +242,21 @@ export const ISO_STANDARDS = [
   }
 ];
 
-/* OCULTO: tripro.cl / ManteniApp aún no lanzado
-export const TRIPRO_CASE_STUDY = {
-  partnerName: "tripro.cl",
+/* OCULTO: caso enterprise (cliente NDA) / ManteniApp aún no lanzado.
+   Sin nombres de cliente, sin URLs de su dominio y sin métricas hasta
+   autorización escrita. Al activar, rellenar appUrl/siteUrl y métricas medidas. */
+export const ENTERPRISE_CASE_STUDY = {
+  partnerName: "Empresa cliente (NDA)",
   country: "Chile",
-  industry: "Industrial Mining & Engineering Field Services",
+  industry: "Industrial Field Services",
   flagshipApp: "ManteniApp",
-  quote: "tripro.cl fue el primer socio comercial que confió en nuestra empresa, posicionándose como cliente pionero y empresa referente que utiliza el software de SWAL para fortalecer su operación y proteger la privacidad de sus datos sin costes adicionales.",
+  appUrl: "",
+  siteUrl: "",
+  quote: "La arquitectura local-first permite operar en faena sin internet manteniendo los datos bajo control del cliente.",
   metrics: [
-    { label: "Uptime en Terreno", value: "100%", detail: "Operación continua en faenas sin internet" },
-    { label: "Coste por Usuario", value: "$0 / mes", detail: "Sin licencias SaaS recurrentes" },
-    { label: "Privacidad de Datos", value: "100% Local", detail: "Datos operativos soberanos en Chile" },
-    { label: "Firmas Digitales", value: "Instantáneas", detail: "Validación biométrica en terreno" }
+    { label: "Uptime en Terreno", value: "En validación", detail: "Medición pendiente" },
+    { label: "Coste por Usuario", value: "En validación", detail: "Medición pendiente" },
+    { label: "Privacidad de Datos", value: "En validación", detail: "Medición pendiente" },
+    { label: "Firmas Digitales", value: "En validación", detail: "Medición pendiente" }
   ]
 };
-*/
