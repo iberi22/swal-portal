@@ -39,7 +39,7 @@
           {t("gpu.localDesc")}
         </p>
 
-        <div class="space-y-2.5 pt-2 border-t border-white/5 font-mono text-xs text-text-muted">
+        <div class="space-y-2.5 pt-2 border-t border-white/5 font-mono text-xs text-text-secondary">
           <div class="flex items-center gap-2 text-white">
             <span class="text-accent-cyan">✔</span> {t("gpu.localCheck1")}
           </div>
@@ -72,7 +72,7 @@
           {t("gpu.cloudDesc")}
         </p>
 
-        <div class="space-y-2.5 pt-2 border-t border-white/5 font-mono text-xs text-text-muted">
+        <div class="space-y-2.5 pt-2 border-t border-white/5 font-mono text-xs text-text-secondary">
           <div class="flex items-center gap-2 text-white">
             <span class="text-accent-emerald">✔</span> {t("gpu.cloudCheck1")}
           </div>

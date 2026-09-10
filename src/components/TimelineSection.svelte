@@ -21,8 +21,8 @@
     {
       date: "September 2026",
       tag: "Enterprise & Private Enclave",
-      title: "Veedur-IA Private Enterprise Engine",
-      desc: "Forensic SECOP II public procurement intelligence and whistleblower audit engine isolated as a confidential internal enterprise venture under strict operational security.",
+      title: "Veedur-IA Enterprise Engine",
+      desc: "Forensic SECOP II public procurement intelligence and whistleblower audit engine isolated as a secure enterprise platform with strict operational security.",
       commit: "623af36",
       status: "private"
     },

@@ -12,10 +12,10 @@
         </div>
         <span class="text-base font-bold text-white tracking-wider">SouthWest AI Labs (SWAL)</span>
       </div>
-      <p class="text-text-muted leading-relaxed max-w-md">
+      <p class="text-text-secondary leading-relaxed max-w-md">
         {t("footer.desc")}
       </p>
-      <div class="text-[11px] text-text-muted">
+      <div class="text-[11px] text-text-secondary">
         {t("footer.founder")}
       </div>
     </div>
@@ -23,7 +23,7 @@
     <!-- Quick Links -->
     <div class="space-y-3">
       <div class="font-bold text-white uppercase tracking-wider text-xs">{t("footer.linksTitle")}</div>
-      <ul class="space-y-2 text-text-muted">
+      <ul class="space-y-2 text-text-secondary">
         <li><a href="https://saberparatodos.space" target="_blank" class="hover:text-accent-cyan transition-colors">SaberParaTodos</a></li>
         <li><a href="https://estante-inventario.vercel.app" target="_blank" class="hover:text-accent-cyan transition-colors">Shelf POS</a></li>
         <li><a href="https://github.com/iberi22/xavier" target="_blank" class="hover:text-accent-cyan transition-colors">Xavier Memory Core</a></li>
@@ -34,7 +34,7 @@
     <!-- Governance & Standards -->
     <div class="space-y-3">
       <div class="font-bold text-white uppercase tracking-wider text-xs">{t("footer.securityTitle")}</div>
-      <ul class="space-y-2 text-text-muted">
+      <ul class="space-y-2 text-text-secondary">
         <li><span class="text-accent-emerald">✔</span> ISO 27001:2022 (ISMS)</li>
         <li><span class="text-accent-emerald">✔</span> ISO 27701:2019 (PIMS)</li>
         <li><span class="text-accent-emerald">✔</span> ISO 42001:2023 (AI AIMS)</li>
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-text-muted text-[11px]">
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-text-secondary text-[11px]">
     <div>
       {t("footer.copyright")}
     </div>

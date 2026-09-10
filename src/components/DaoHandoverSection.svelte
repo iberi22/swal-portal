@@ -39,7 +39,7 @@
           <div class="w-full h-3 rounded-full bg-bg-void/80 overflow-hidden border border-white/10 p-0.5">
             <div class="h-full rounded-full bg-gradient-to-r from-accent-cyan via-accent-emerald to-purple-500 transition-all duration-1000" style="width: {maintainersPercent}%"></div>
           </div>
-          <p class="text-[11px] font-mono text-text-muted">{t("dao.activeNodesReq")}</p>
+          <p class="text-[11px] font-mono text-text-secondary">{t("dao.activeNodesReq")}</p>
         </div>
 
         <!-- Human Nodes Progress -->
@@ -51,7 +51,7 @@
           <div class="w-full h-3 rounded-full bg-bg-void/80 overflow-hidden border border-white/10 p-0.5">
             <div class="h-full rounded-full bg-gradient-to-r from-accent-emerald to-accent-cyan transition-all duration-1000" style="width: {scanProgressPercent}%"></div>
           </div>
-          <p class="text-[11px] font-mono text-text-muted">{t("dao.humanNodesReq")}</p>
+          <p class="text-[11px] font-mono text-text-secondary">{t("dao.humanNodesReq")}</p>
         </div>
       </div>
 
@@ -64,7 +64,7 @@
             <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-cyan/20 text-accent-cyan">Self-Sustaining</span>
           </div>
           <div class="text-xl font-bold font-mono text-white">100% On-Device</div>
-          <p class="text-xs text-text-muted leading-relaxed">
+          <p class="text-xs text-text-secondary leading-relaxed">
             Every user device operates as a sovereign mesh node (P2P CRDT) with zero licensing costs. Optional Partner Cloud Node persistence available at direct infrastructure cost.
           </p>
         </div>
@@ -76,7 +76,7 @@
             <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Phase 1 Activation</span>
           </div>
           <div class="text-xl font-bold font-mono text-white">2 Maintainer Quorum</div>
-          <p class="text-xs text-text-muted leading-relaxed">
+          <p class="text-xs text-text-secondary leading-relaxed">
             Full DAO governance and protocol stewardship unlock as soon as 2 maintainer nodes are active: SWAL Genesis (active) and 1 peer node scanned and promoted by Xavier.
           </p>
         </div>

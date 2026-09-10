@@ -26,7 +26,7 @@
             <div class="px-4 py-2 rounded-xl bg-accent-emerald/10 border border-accent-emerald/30 font-mono font-bold text-accent-emerald text-sm">
               tripro.cl (Chile)
             </div>
-            <span class="text-xs font-mono text-text-muted">Mining & Engineering Services</span>
+            <span class="text-xs font-mono text-text-secondary">Mining & Engineering Services</span>
           </div>
 
           <blockquote class="text-lg md:text-xl font-medium text-white/90 italic leading-relaxed border-l-2 border-accent-emerald pl-6">
@@ -50,7 +50,7 @@
               href="https://tripro.cl"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs font-mono text-text-muted hover:text-white transition-colors"
+              class="text-xs font-mono text-text-secondary hover:text-white transition-colors"
             >
               {t("enterprise.visitPartner")}
             </a>
@@ -63,7 +63,7 @@
             <div class="glass-panel p-5 space-y-2 border-white/5 bg-bg-void/50">
               <div class="text-2xl font-bold font-mono text-accent-emerald">{metric.value}</div>
               <div class="text-xs font-bold text-white">{metric.label}</div>
-              <div class="text-[11px] text-text-muted leading-tight">{metric.detail}</div>
+              <div class="text-[11px] text-text-secondary leading-tight">{metric.detail}</div>
             </div>
           {/each}
         </div>
@@ -76,7 +76,7 @@
       <div class="overflow-x-auto">
         <table class="w-full text-left text-xs font-mono border-collapse">
           <thead>
-            <tr class="border-b border-white/10 text-text-muted">
+            <tr class="border-b border-white/10 text-text-secondary">
               <th class="py-3 px-4">{t("enterprise.tableDim")}</th>
               <th class="py-3 px-4 text-red-400">{t("enterprise.tableLegacy")}</th>
               <th class="py-3 px-4 text-accent-emerald">{t("enterprise.tableSwal")}</th>
@@ -85,22 +85,22 @@
           <tbody class="divide-y divide-white/5 text-text-secondary">
             <tr>
               <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowOffline")}</td>
-              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowOfflineLegacy")}</td>
+              <td class="py-3 px-4 text-text-secondary">{t("enterprise.rowOfflineLegacy")}</td>
               <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowOfflineSwal")}</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowPrivacy")}</td>
-              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowPrivacyLegacy")}</td>
+              <td class="py-3 px-4 text-text-secondary">{t("enterprise.rowPrivacyLegacy")}</td>
               <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowPrivacySwal")}</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowPricing")}</td>
-              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowPricingLegacy")}</td>
+              <td class="py-3 px-4 text-text-secondary">{t("enterprise.rowPricingLegacy")}</td>
               <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowPricingSwal")}</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-bold text-white">{t("enterprise.rowLockin")}</td>
-              <td class="py-3 px-4 text-text-muted">{t("enterprise.rowLockinLegacy")}</td>
+              <td class="py-3 px-4 text-text-secondary">{t("enterprise.rowLockinLegacy")}</td>
               <td class="py-3 px-4 text-accent-emerald font-bold">{t("enterprise.rowLockinSwal")}</td>
             </tr>
           </tbody>

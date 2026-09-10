@@ -44,7 +44,7 @@
               <span class="text-xs font-mono text-accent-emerald">{std.coverage}</span>
             </div>
             <h3 class="text-base font-bold text-white">{std.code}</h3>
-            <p class="text-xs font-mono text-text-muted">{std.name}</p>
+            <p class="text-xs font-mono text-text-secondary">{std.name}</p>
             <p class="text-xs text-text-secondary leading-relaxed">{std.desc}</p>
           </div>
 
@@ -66,15 +66,15 @@
       <div class="grid sm:grid-cols-3 gap-4 pt-2">
         <div class="p-4 rounded-xl bg-bg-void/60 border border-white/5 space-y-1 font-mono text-xs">
           <div class="text-accent-cyan font-bold">{t("iso.boxMallas")}</div>
-          <div class="text-text-muted">{t("iso.boxMallasDesc")}</div>
+          <div class="text-text-secondary">{t("iso.boxMallasDesc")}</div>
         </div>
         <div class="p-4 rounded-xl bg-bg-void/60 border border-white/5 space-y-1 font-mono text-xs">
           <div class="text-accent-emerald font-bold">{t("iso.boxTor")}</div>
-          <div class="text-text-muted">{t("iso.boxTorDesc")}</div>
+          <div class="text-text-secondary">{t("iso.boxTorDesc")}</div>
         </div>
         <div class="p-4 rounded-xl bg-bg-void/60 border border-white/5 space-y-1 font-mono text-xs">
           <div class="text-accent-orange font-bold">{t("iso.boxAcl")}</div>
-          <div class="text-text-muted">{t("iso.boxAclDesc")}</div>
+          <div class="text-text-secondary">{t("iso.boxAclDesc")}</div>
         </div>
       </div>
     </div>
