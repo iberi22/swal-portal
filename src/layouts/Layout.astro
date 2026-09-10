@@ -1,14 +1,17 @@
 ---
 import "../styles/global.css";
+import { t } from "../i18n/index";
 
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
 const {
-  title = "SouthWest AI Labs (SWAL) — Sovereign Decentralized AI Network",
-  description = "Human-Augmented Engineering on an Autonomous P2P Data Plane. All Pro Features Free. Zero Cloud Lock-In. Powered by BELA Colombia."
+  title = t("layout.title"),
+  description = t("layout.description"),
+  ogImage = "https://southwest-ai-labs.github.io/og-image.png"
 } = Astro.props;
 ---
 
@@ -27,6 +30,13 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://southwest-ai-labs.github.io" />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

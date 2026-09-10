@@ -14,20 +14,6 @@ export interface SwalApp {
 }
 
 export const SWAL_APPS: SwalApp[] = [
-  /* OCULTO: tripro.cl / ManteniApp aún no lanzado
-  {
-    id: "manteniapp",
-    name: "ManteniApp",
-    tagline: "Industrial Field Service Management SaaS (tripro.cl)",
-    category: "enterprise",
-    description: "Enterprise FSM SaaS with AI diagnostics, digital approval workflows, and 100% offline-first operations for mining and heavy industry in Chile. First commercial deployment with strategic enterprise partner tripro.cl.",
-    stack: ["TypeScript", "PWA", "Python", "PostgreSQL", "AI Diagnostics"],
-    status: "production",
-    repoStatus: "invite",
-    liveUrl: "https://tripro.cl/manteniapp",
-    isEnterpriseClient: true,
-  },
-  */
   {
     id: "xavier",
     name: "Xavier",
@@ -139,31 +125,6 @@ export const SWAL_APPS: SwalApp[] = [
     status: "active",
     repoStatus: "invite",
   },
-  /* OCULTO: SWAL Vault
-  {
-    id: "swal-vault",
-    name: "SWAL Vault",
-    tagline: "Self-Sovereign Identity & Passkey Bóveda",
-    category: "core",
-    description: "Zero-knowledge biometric passkey wallet and decentralized identity provider integrating with Xavier Clavis.",
-    stack: ["Flutter", "Rust FFI", "Passkeys", "WebAuthn"],
-    status: "active",
-    repoStatus: "invite",
-  },
-  */
-  /* OCULTO: TikTokBoost (TICBOX)
-  {
-    id: "tiktboost",
-    name: "TikTokBoost",
-    tagline: "Local-First TikTok Studio & AI Analytics",
-    category: "creator",
-    description: "Content scheduling, predictive video engagement metrics, and automated video generation studio running 100% in-browser.",
-    stack: ["Svelte 5", "Astro", "TypeScript", "Canvas API"],
-    status: "production",
-    repoStatus: "invite",
-    liveUrl: "https://tiktboost.vercel.app",
-  },
-  */
   {
     id: "maloca",
     name: "Maloca",
@@ -185,32 +146,7 @@ export const SWAL_APPS: SwalApp[] = [
     repoStatus: "public",
     repoUrl: "https://github.com/iberi22/gastronomic-open-standard-GOS",
   },
-  /* OCULTO: Veedur-IA (SECOP Intelligence)
-  {
-    id: "veedur-ia",
-    name: "Veedur-IA (SECOP Intelligence)",
-    tagline: "Private Procurement Intelligence & Forensic Audit Engine",
-    category: "enterprise",
-    description: "Private internal intelligence platform developed by SWAL Lab. Operates confidential procurement matching, forensic anomaly detection, and whistleblower claim analysis under strict operational security.",
-    stack: ["Rust", "Polars", "Astro", "SECOP II", "Private Enclave"],
-    status: "active",
-    repoStatus: "invite",
-    isEnterpriseClient: true,
-  },
-  */
-  /* OCULTO: Nido
-  {
-    id: "nido",
-    name: "Nido",
-    tagline: "AI-Assisted Architectural & Space Designer",
-    category: "creator",
-    description: "Interactive architectural layout and interior floor planning tool with WebGPU hardware acceleration and AI layout generation.",
-    stack: ["WebGPU", "Svelte 5", "TypeScript", "Geometry Engines"],
-    status: "active",
-    repoStatus: "invite",
-  },
-  */
-  ];
+];
 
 export const ISO_STANDARDS = [
   {
@@ -243,18 +179,16 @@ export const ISO_STANDARDS = [
   }
 ];
 
-/* OCULTO: tripro.cl / ManteniApp aún no lanzado
 export const TRIPRO_CASE_STUDY = {
-  partnerName: "tripro.cl",
-  country: "Chile",
-  industry: "Industrial Mining & Engineering Field Services",
-  flagshipApp: "ManteniApp",
-  quote: "tripro.cl fue el primer socio comercial que confió en nuestra empresa, posicionándose como cliente pionero y empresa referente que utiliza el software de SWAL para fortalecer su operación y proteger la privacidad de sus datos sin costes adicionales.",
+  partnerName: "Strategic Enterprise Partner",
+  country: "Global Operations",
+  industry: "Industrial Field Service Management",
+  flagshipApp: "Enterprise FSM",
+  quote: "Strategic enterprise partner leveraging SWAL software to strengthen offline operations and safeguard sovereign data privacy without recurring licensing costs.",
   metrics: [
-    { label: "Uptime en Terreno", value: "100%", detail: "Operación continua en faenas sin internet" },
-    { label: "Coste por Usuario", value: "$0 / mes", detail: "Sin licencias SaaS recurrentes" },
-    { label: "Privacidad de Datos", value: "100% Local", detail: "Datos operativos soberanos en Chile" },
-    { label: "Firmas Digitales", value: "Instantáneas", detail: "Validación biométrica en terreno" }
+    { label: "Field Uptime", value: "100%", detail: "Continuous operation without cloud dependency" },
+    { label: "License Cost", value: "$0 / mo", detail: "Zero recurring SaaS seat licenses" },
+    { label: "Data Privacy", value: "100% On-Device", detail: "Sovereign local operational data" },
+    { label: "Validation", value: "Instant", detail: "Biometric and cryptographic verification" }
   ]
 };
-*/

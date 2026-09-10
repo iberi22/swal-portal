@@ -1,5 +1,7 @@
 export const TRANSLATIONS: Record<string, Record<string, string>> = {
   "en": {
+    "layout.title": "SouthWest AI Labs (SWAL) — Sovereign Decentralized AI Network",
+    "layout.description": "Human-Augmented Engineering on an Autonomous P2P Data Plane. All Pro Features Free. Zero Cloud Lock-In. Powered by BELA Colombia.",
     "nav.cores": "Core Pillars",
     "nav.apps": "Ecosystem (18 Apps)",
     "nav.enterprise": "Enterprise",
@@ -221,6 +223,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "Security & Standards"
 },
   "es": {
+    "layout.title": "SouthWest AI Labs (SWAL) — Red de IA Descentralizada Soberana",
+    "layout.description": "Ingeniería Humana Aumentada en un Plano de Datos P2P Autónomo. Funciones Pro Gratis. Sin Bloqueo de Nube.",
     "nav.cores": "Núcleos Centrales",
     "nav.apps": "Ecosistema (18 Apps)",
     "nav.enterprise": "Empresarial",
@@ -442,6 +446,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "Seguridad y Estándares"
 },
   "zh": {
+    "layout.title": "SouthWest AI Labs (SWAL) — 主权去中心化 AI 网络",
+    "layout.description": "基于自主 P2P 数据平面的增强型工程。所有 Pro 功能免费。零云锁定。",
     "nav.cores": "核心支柱",
     "nav.apps": "生态系统 (18个应用)",
     "nav.enterprise": "企业级验证",
@@ -663,6 +669,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "安全与标准"
 },
   "hi": {
+    "layout.title": "SouthWest AI Labs (SWAL) — संप्रभु विकेंद्रीकृत AI नेटवर्क",
+    "layout.description": "स्वायत्त P2P डेटा प्लेन पर मानव-संवर्धित इंजीनियरिंग। सभी प्रो सुविधाएँ मुफ़्त।",
     "nav.cores": "मुख्य स्तंभ",
     "nav.apps": "पारिस्थितिकी तंत्र (18 ऐप्स)",
     "nav.enterprise": "उद्यम (Enterprise)",
@@ -884,6 +892,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "सुरक्षा और मानक"
 },
   "ar": {
+    "layout.title": "SouthWest AI Labs (SWAL) — شبكة الذكاء الاصطناعي اللامركزية السيادية",
+    "layout.description": "هندسة معززة بشريًا على مستوى بيانات P2P مستقل. جميع الميزات الاحترافية مجانية.",
     "nav.cores": "الأركان الأساسية",
     "nav.apps": "النظام البيئي (18 تطبيقًا)",
     "nav.enterprise": "المؤسسات",
@@ -1105,6 +1115,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "الأمان والمعايير"
 },
   "bn": {
+    "layout.title": "SouthWest AI Labs (SWAL) — সার্বভৌম বিকেন্দ্রীভূত AI নেটওয়ার্ক",
+    "layout.description": "স্বায়ত্তশাসিত P2P ডাটা প্লেনে মানব-বর্ধিত প্রকৌশল। সমস্ত প্রো সুবিধা বিনামূল্যে।",
     "nav.cores": "মূল স্তম্ভ",
     "nav.apps": "ইকোসিস্টেম (১৮টি অ্যাপ)",
     "nav.enterprise": "এন্টারপ্রাইজ",
@@ -1326,6 +1338,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "নিরাপত্তা ও মানদণ্ড"
 },
   "pt": {
+    "layout.title": "SouthWest AI Labs (SWAL) — Rede de IA Descentralizada Soberana",
+    "layout.description": "Engenharia Humana Aumentada em um Plano de Dados P2P Autónomo. Recursos Pro Gratuitos.",
     "nav.cores": "Pilares Centrais",
     "nav.apps": "Ecossistema (18 Apps)",
     "nav.enterprise": "Empresarial",
@@ -1547,6 +1561,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "Segurança e Padrões"
 },
   "ru": {
+    "layout.title": "SouthWest AI Labs (SWAL) — Суверенная децентрализованная сеть ИИ",
+    "layout.description": "Инженерия на базе автономной P2P-среды данных. Все Pro-функции бесплатны.",
     "nav.cores": "Основные Задачи",
     "nav.apps": "Экосистема (18 Приложений)",
     "nav.enterprise": "Предприятиям",
@@ -1768,6 +1784,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "Безопасность и Стандарты"
 },
   "ur": {
+    "layout.title": "SouthWest AI Labs (SWAL) — خودمختار غیر مرکزی AI نیٹ ورک",
+    "layout.description": "خودمختار P2P ڈیٹا پلین پر انسانی افزودہ انجینئرنگ। تمام پرو خصوصیات مفت।",
     "nav.cores": "بنیادی ستون",
     "nav.apps": "ایکوسسٹم (18 ایپس)",
     "nav.enterprise": "انٹرپرائز",
@@ -1989,6 +2007,8 @@ export const TRANSLATIONS: Record<string, Record<string, string>> = {
     "footer.securityTitle": "سیکیورٹی اور معیارات"
 },
   "fr": {
+    "layout.title": "SouthWest AI Labs (SWAL) — Réseau IA Décentralisé Souverain",
+    "layout.description": "Ingénierie Humaine Augmentée sur un Plan de Données P2P Autonome. Fonctionnalités Pro Gratuites.",
     "nav.cores": "Piliers Centraux",
     "nav.apps": "Écosystème (18 Apps)",
     "nav.enterprise": "Entreprise",
