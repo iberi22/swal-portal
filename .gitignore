@@ -23,6 +23,7 @@ dist/
 .gitcore/chronicles/
 .gitcore/waves/
 .gitcore/sdd/
+.gitcore/releases/
 .gitcore/issues/
 .gitcore/features.details/
 .gitcore/CONTEXT_LOG.md
@@ -42,6 +43,7 @@ dist/
 .atl/
 .gestalt/
 .jules/
+.xavier/
 .xavier-backups/
 .skill-registry.cache.json
 
