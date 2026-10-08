@@ -52,8 +52,8 @@
     <nav class="hidden lg:flex items-center gap-7 text-xs font-mono font-medium text-text-secondary">
       <a href="#cores" class="hover:text-accent-cyan transition-colors">{t("nav.cores")}</a>
       <a href="#apps" class="hover:text-accent-cyan transition-colors">{t("nav.apps")}</a>
-      <a href="#iso" class="hover:text-accent-cyan transition-colors">{t("nav.iso")}</a>
       <a href="#gpu-cloud" class="hover:text-accent-cyan transition-colors">{t("nav.gpuCloud")}</a>
+      <a href="#precios" class="hover:text-accent-cyan transition-colors">{t("nav.pricing")}</a>
       <a href="#dao" class="hover:text-accent-cyan transition-colors">{t("nav.dao")}</a>
     </nav>
 
@@ -184,8 +184,8 @@
       <nav class="flex flex-col gap-4 text-xs font-mono text-text-secondary">
         <a href="#cores" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.cores")}</a>
         <a href="#apps" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.apps")}</a>
-        <a href="#iso" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.iso")}</a>
         <a href="#gpu-cloud" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.gpuCloud")}</a>
+        <a href="#precios" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.pricing")}</a>
         <a href="#dao" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.dao")}</a>
       </nav>
 

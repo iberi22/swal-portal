@@ -1,4 +1,4 @@
-import { TRANSLATIONS, type SupportedLanguage, LANGUAGE_OPTIONS } from "./translations";
+import { TRANSLATIONS, type SupportedLanguage, LANGUAGE_OPTIONS, isActiveLanguage } from "./translations";
 
 export type ThemeMode = "dark" | "light" | "system";
 
@@ -15,14 +15,14 @@ class I18nManager {
   initFromBrowser() {
     // Language detection
     const savedLang = localStorage.getItem("swal_lang") as SupportedLanguage;
-    if (savedLang && TRANSLATIONS[savedLang]) {
+    if (isActiveLanguage(savedLang)) {
       this.setLanguage(savedLang);
     } else {
       const browserLangs = navigator.languages || [navigator.language || "en"];
       let detected: SupportedLanguage = "en";
       for (const raw of browserLangs) {
         const code = raw.toLowerCase().split("-")[0] as SupportedLanguage;
-        if (TRANSLATIONS[code]) {
+        if (isActiveLanguage(code)) {
           detected = code;
           break;
         }
@@ -42,7 +42,7 @@ class I18nManager {
   }
 
   setLanguage(lang: SupportedLanguage) {
-    if (!TRANSLATIONS[lang]) lang = "en";
+    if (!isActiveLanguage(lang)) lang = "en";
     this.currentLang = lang;
     if (typeof window !== "undefined") {
       localStorage.setItem("swal_lang", lang);

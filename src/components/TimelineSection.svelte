@@ -6,7 +6,7 @@
       date: "August 2026",
       tag: "Wave 1 - 5",
       title: "Cores Unification & Deterministic VFS",
-      desc: "Xavier cognitive memory engine, edge-mesh P2P CRDT data plane, swal-agent-runner VFS sandboxes, and @swal/ui Hive Dark design tokens reached 100% verified status.",
+      desc: "Xavier cognitive memory engine, edge-mesh P2P CRDT data plane, swal-agent-runner VFS sandboxes, and @swal/ui Hive Dark design tokens reached verified status in their own test suites.",
       commit: "5c8bbc9d",
       status: "verified"
     },

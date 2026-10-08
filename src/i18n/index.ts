@@ -1,5 +1,5 @@
 import { writable, get } from "svelte/store";
-import { TRANSLATIONS, type SupportedLanguage, LANGUAGE_OPTIONS } from "./translations";
+import { TRANSLATIONS, type SupportedLanguage, LANGUAGE_OPTIONS, isActiveLanguage } from "./translations";
 
 export type ThemeMode = "dark" | "light" | "system";
 
@@ -9,7 +9,7 @@ export const currentTheme = writable<ThemeMode>("system");
 if (typeof window !== "undefined") {
   // --- Language Initialization & Auto-Detection ---
   const savedLang = localStorage.getItem("swal_lang") as SupportedLanguage;
-  if (savedLang && TRANSLATIONS[savedLang]) {
+  if (isActiveLanguage(savedLang)) {
     setLanguage(savedLang);
   } else {
     // Auto-detect browser/system language
@@ -17,7 +17,7 @@ if (typeof window !== "undefined") {
     let detected: SupportedLanguage = "en";
     for (const raw of browserLangs) {
       const code = raw.toLowerCase().split("-")[0] as SupportedLanguage;
-      if (TRANSLATIONS[code]) {
+      if (isActiveLanguage(code)) {
         detected = code;
         break;
       }
@@ -38,7 +38,7 @@ if (typeof window !== "undefined") {
 }
 
 export function setLanguage(lang: SupportedLanguage) {
-  if (!TRANSLATIONS[lang]) lang = "en";
+  if (!isActiveLanguage(lang)) lang = "en";
   currentLang.set(lang);
   if (typeof window !== "undefined") {
     localStorage.setItem("swal_lang", lang);
