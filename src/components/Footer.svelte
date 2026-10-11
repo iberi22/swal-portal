@@ -35,11 +35,10 @@
     <div class="space-y-3">
       <div class="font-bold text-white uppercase tracking-wider text-xs">{t("footer.securityTitle")}</div>
       <ul class="space-y-2 text-text-muted">
-        <li><span class="text-accent-emerald">✔</span> ISO 27001:2022 (ISMS)</li>
-        <li><span class="text-accent-emerald">✔</span> ISO 27701:2019 (PIMS)</li>
-        <li><span class="text-accent-emerald">✔</span> ISO 42001:2023 (AI AIMS)</li>
-        <li><span class="text-accent-cyan">✔</span> P2P Tor / Onion Transport</li>
-        <li><span class="text-purple-400">✔</span> 2-Maintainer DAO Handover</li>
+        <li><span class="text-accent-emerald">✔</span> {t("footer.sec1")}</li>
+        <li><span class="text-accent-emerald">✔</span> {t("footer.sec2")}</li>
+        <li><span class="text-accent-cyan">·</span> {t("footer.sec3")}</li>
+        <li><span class="text-purple-400">·</span> {t("footer.sec4")}</li>
       </ul>
     </div>
   </div>

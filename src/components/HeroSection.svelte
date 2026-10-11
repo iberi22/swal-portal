@@ -72,8 +72,8 @@
             <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statSync")}</div>
           </div>
           <div class="space-y-1">
-            <div class="text-xl md:text-2xl font-bold font-mono text-accent-orange">ISO 27001</div>
-            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statIso")}</div>
+            <div class="text-xl md:text-2xl font-bold font-mono text-accent-orange">AGPL-3.0</div>
+            <div class="text-xs text-text-muted font-mono uppercase tracking-wider">{t("hero.statLicense")}</div>
           </div>
         </div>
       </div>

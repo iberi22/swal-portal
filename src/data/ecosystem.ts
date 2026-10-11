@@ -144,7 +144,7 @@ export const SWAL_APPS: SwalApp[] = [
     name: "SWAL Vault",
     tagline: "Self-Sovereign Identity & Passkey Bóveda",
     category: "core",
-    description: "Zero-knowledge biometric passkey wallet and decentralized identity provider integrating with Xavier Clavis.",
+    description: "Biometric passkey wallet and decentralized identity provider (in development) integrating with Xavier Clavis.",
     stack: ["Flutter", "Rust FFI", "Passkeys", "WebAuthn"],
     status: "active",
     repoStatus: "invite",
@@ -156,7 +156,7 @@ export const SWAL_APPS: SwalApp[] = [
     name: "TikTokBoost",
     tagline: "Local-First TikTok Studio & AI Analytics",
     category: "creator",
-    description: "Content scheduling, predictive video engagement metrics, and automated video generation studio running 100% in-browser.",
+    description: "Content scheduling, predictive video engagement metrics, and automated video generation studio running in the browser.",
     stack: ["Svelte 5", "Astro", "TypeScript", "Canvas API"],
     status: "production",
     repoStatus: "invite",
@@ -210,37 +210,6 @@ export const SWAL_APPS: SwalApp[] = [
   },
   */
   ];
-
-export const ISO_STANDARDS = [
-  {
-    code: "ISO 27001:2022",
-    name: "Information Security Management System (ISMS)",
-    coverage: "100% Control Mapping",
-    desc: "End-to-end cryptographic protection (AES-256-GCM / ML-KEM-768), strict role-based access control (RBAC), and hardware vault isolation.",
-    badge: "Security Base"
-  },
-  {
-    code: "ISO 27701:2019",
-    name: "Privacy Information Management System (PIMS)",
-    coverage: "Local-First Architecture",
-    desc: "Guaranteed zero PII exfiltration. User data is processed on-device and never shared or aggregated without explicit local consent.",
-    badge: "Privacy Sovereign"
-  },
-  {
-    code: "ISO 27017 / 27018",
-    name: "Cloud Security & PII Protection in Cloud",
-    coverage: "Zero-Knowledge Persistence",
-    desc: "Cloud persistence nodes store only encrypted raw bytes. Storage providers possess zero capability to inspect or parse payload data.",
-    badge: "Cloud Zero-Knowledge"
-  },
-  {
-    code: "ISO 42001:2023",
-    name: "Artificial Intelligence Management System (AIMS)",
-    coverage: "Human-in-the-Loop AI",
-    desc: "Deterministic audit trails for all agentic decisions. AI agents advise and coordinate but never hold unilateral voting authority.",
-    badge: "AI Governance"
-  }
-];
 
 /* OCULTO: caso enterprise (cliente NDA) / ManteniApp aún no lanzado.
    Sin nombres de cliente, sin URLs de su dominio y sin métricas hasta

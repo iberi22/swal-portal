@@ -5,11 +5,11 @@
   let currentMaintainers = $state(1); // SWAL Genesis node is active
   let targetMaintainers = 2; // Threshold for active DAO quorum
 
-  let scannedPeers = $state(14820);
-  let qualifiedPeers = $state(28);
+  // Solo nodos externos reales y verificados. Hoy no hay red pública: 0.
+  // (Antes mostraba 14.820 pares "escaneados", un dato simulado sin respaldo.)
+  let verifiedPeers = $state(0);
 
   let maintainersPercent = $derived(((currentMaintainers / targetMaintainers) * 100).toFixed(0));
-  let scanProgressPercent = $derived(((qualifiedPeers / 100) * 100).toFixed(1));
 </script>
 
 <section id="dao" class="py-24 px-6 relative bg-bg-dark/60 border-t border-white/5">
@@ -46,10 +46,10 @@
         <div class="space-y-3">
           <div class="flex justify-between items-baseline font-mono">
             <span class="text-xs text-text-secondary uppercase tracking-wider">{t("dao.humanNodes")}</span>
-            <span class="text-sm text-accent-emerald font-bold">{scannedPeers.toLocaleString()} Peers ({qualifiedPeers} Candidate Nodos)</span>
+            <span class="text-sm text-accent-emerald font-bold">{verifiedPeers}</span>
           </div>
           <div class="w-full h-3 rounded-full bg-bg-void/80 overflow-hidden border border-white/10 p-0.5">
-            <div class="h-full rounded-full bg-gradient-to-r from-accent-emerald to-accent-cyan transition-all duration-1000" style="width: {scanProgressPercent}%"></div>
+            <div class="h-full rounded-full bg-gradient-to-r from-accent-emerald to-accent-cyan transition-all duration-1000" style="width: 0%"></div>
           </div>
           <p class="text-[11px] font-mono text-text-muted">{t("dao.humanNodesReq")}</p>
         </div>
@@ -61,11 +61,11 @@
         <div class="p-5 rounded-xl bg-bg-void/40 border border-white/10 space-y-2">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono text-accent-cyan font-bold">NODE ECONOMICS</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-cyan/20 text-accent-cyan">Self-Sustaining</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-cyan/20 text-accent-cyan">Local-first</span>
           </div>
-          <div class="text-xl font-bold font-mono text-white">100% On-Device</div>
+          <div class="text-xl font-bold font-mono text-white">{t("dao.nodeEconTitle")}</div>
           <p class="text-xs text-text-muted leading-relaxed">
-            Every user device operates as a sovereign mesh node (P2P CRDT) with zero licensing costs. Optional Partner Cloud Node persistence available at direct infrastructure cost.
+            {t("dao.nodeEconDesc")}
           </p>
         </div>
 
@@ -73,11 +73,11 @@
         <div class="p-5 rounded-xl bg-bg-void/40 border border-white/10 space-y-2">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono text-purple-400 font-bold">DUAL-MAINTAINER GENESIS</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Phase 1 Activation</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">{t("dao.experimentalTag")}</span>
           </div>
           <div class="text-xl font-bold font-mono text-white">2 Maintainer Quorum</div>
           <p class="text-xs text-text-muted leading-relaxed">
-            Full DAO governance and protocol stewardship unlock as soon as 2 maintainer nodes are active: SWAL Genesis (active) and 1 peer node scanned and promoted by Xavier.
+            {t("dao.quorumDesc")}
           </p>
         </div>
       </div>
