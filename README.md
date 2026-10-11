@@ -2,6 +2,13 @@
 
 Portal oficial de **SouthWest AI Labs (SWAL)** — red soberana y descentralizada de IA (Sovereign Decentralized AI Network).
 
+## Status
+
+[![CI](https://github.com/iberi22/swal-portal/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/iberi22/swal-portal/actions/workflows/deploy.yml)
+
+- **Deploy Target:** GitHub Pages (`southwest-ai-labs.github.io`)
+- **Note:** Legal and pricing claims follow PR #9.
+
 Sitio de posicionamiento de marca construido con **Astro 6 + Svelte 5 + Tailwind CSS 4 + Three.js** (mesh 3D). Documenta el posicionamiento de SWAL como *community deep-tech research lab* fundado por Brahyan Belalcázar, con enfoque en soberanía de datos, infraestructura descentralizada y gobernanza DAO.
 
 ## Stack
@@ -25,12 +32,12 @@ Sitio de posicionamiento de marca construido con **Astro 6 + Svelte 5 + Tailwind
 
 ## Desarrollo
 
-```bash
-pnpm install
-pnpm dev       # servidor local
-pnpm build     # build estático a dist/
-pnpm preview   # previsualizar el build
-```
+| Script | Descripción |
+|---|---|
+| `pnpm install` | Instalar dependencias |
+| `pnpm dev` | Servidor local |
+| `pnpm build` | Build estático a `dist/` |
+| `pnpm preview` | Previsualizar el build |
 
 ## Despliegue
 
