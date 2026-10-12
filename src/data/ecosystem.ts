@@ -14,19 +14,6 @@ export interface SwalApp {
 }
 
 export const SWAL_APPS: SwalApp[] = [
-  /* OCULTO: caso enterprise (cliente NDA) / ManteniApp aún no lanzado
-  {
-    id: "manteniapp",
-    name: "ManteniApp",
-    tagline: "Industrial Field Service Management SaaS (enterprise client)",
-    category: "enterprise",
-    description: "Enterprise FSM SaaS with AI diagnostics, digital approval workflows and offline-first operations for mining and heavy industry. Case study pending client authorization.",
-    stack: ["TypeScript", "PWA", "Python", "PostgreSQL", "AI Diagnostics"],
-    status: "beta",
-    repoStatus: "invite",
-    isEnterpriseClient: true,
-  },
-  */
   {
     id: "xavier",
     name: "Xavier",
@@ -198,21 +185,3 @@ export const SWAL_APPS: SwalApp[] = [
   */
   ];
 
-/* OCULTO: caso enterprise (cliente NDA) / ManteniApp aún no lanzado.
-   Sin nombres de cliente, sin URLs de su dominio y sin métricas hasta
-   autorización escrita. Al activar, rellenar appUrl/siteUrl y métricas medidas. */
-export const ENTERPRISE_CASE_STUDY = {
-  partnerName: "Empresa cliente (NDA)",
-  country: "Chile",
-  industry: "Industrial Field Services",
-  flagshipApp: "ManteniApp",
-  appUrl: "",
-  siteUrl: "",
-  quote: "La arquitectura local-first permite operar en faena sin internet manteniendo los datos bajo control del cliente.",
-  metrics: [
-    { label: "Uptime en Terreno", value: "En validación", detail: "Medición pendiente" },
-    { label: "Coste por Usuario", value: "En validación", detail: "Medición pendiente" },
-    { label: "Privacidad de Datos", value: "En validación", detail: "Medición pendiente" },
-    { label: "Firmas Digitales", value: "En validación", detail: "Medición pendiente" }
-  ]
-};
