@@ -5,6 +5,7 @@
   "private": true,
   "description": "SouthWest AI Labs (SWAL) - Sovereign Decentralized AI Network Portal",
   "license": "AGPL-3.0-only",
+  "packageManager": "pnpm@10.30.3",
   "scripts": {
     "dev": "node ./node_modules/astro/bin/astro.mjs dev",
     "build": "node ./node_modules/astro/bin/astro.mjs build",
