@@ -20,14 +20,6 @@
     },
     {
       date: "September 2026",
-      tag: "Enterprise & Private Enclave",
-      title: "Veedur-IA Private Enterprise Engine",
-      desc: "Forensic SECOP II public procurement intelligence and whistleblower audit engine isolated as a confidential internal enterprise venture under strict operational security.",
-      commit: "623af36",
-      status: "private"
-    },
-    {
-      date: "September 2026",
       tag: "Wave 6 - 7",
       title: "Desktop One-Click & Cloudflare Edge Resilience",
       desc: "Dual distribution milestone: One-click native desktop bundles (.dmg / .msi) with automatic background daemons and Cloudflare serverless edge persistence (Workers, Vectorize, D1).",

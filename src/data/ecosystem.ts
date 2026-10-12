@@ -184,19 +184,6 @@ export const SWAL_APPS: SwalApp[] = [
     repoStatus: "public",
     repoUrl: "https://github.com/iberi22/gastronomic-open-standard-GOS",
   },
-  /* OCULTO: Veedur-IA (SECOP Intelligence)
-  {
-    id: "veedur-ia",
-    name: "Veedur-IA (SECOP Intelligence)",
-    tagline: "Private Procurement Intelligence & Forensic Audit Engine",
-    category: "enterprise",
-    description: "Private internal intelligence platform developed by SWAL Lab. Operates confidential procurement matching, forensic anomaly detection, and whistleblower claim analysis under strict operational security.",
-    stack: ["Rust", "Polars", "Astro", "SECOP II", "Private Enclave"],
-    status: "active",
-    repoStatus: "invite",
-    isEnterpriseClient: true,
-  },
-  */
   /* OCULTO: Nido
   {
     id: "nido",
