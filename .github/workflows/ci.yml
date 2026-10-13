@@ -13,10 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The pnpm version is single-sourced from package.json "packageManager".
+      # Do NOT add a `version:` input here: pnpm/action-setup aborts when it
+      # conflicts with "packageManager" (ERR: "Multiple versions of pnpm specified"),
+      # which is exactly what broke the removed Pages deploy job.
       - name: Install pnpm
         uses: pnpm/action-setup@v3
-        with:
-          version: 10.30.3
 
       - name: Use Node.js 22
         uses: actions/setup-node@v4
