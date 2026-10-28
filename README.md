@@ -12,6 +12,10 @@ Portal oficial de **SouthWest AI Labs (SWAL)** — red soberana y descentralizad
 
 Sitio de posicionamiento de marca construido con **Astro 7 + Svelte 5 + Tailwind CSS 4 + Three.js** (mesh 3D). Documenta el posicionamiento de SWAL como *community deep-tech research lab* fundado por Brahyan Belalcázar, con enfoque en soberanía de datos, infraestructura descentralizada y gobernanza DAO.
 
+## Security
+
+Please refer to [SECURITY.md](SECURITY.md) for information on reporting vulnerabilities privately and our response targets.
+
 ## Stack
 
 - [Astro](https://astro.build) 7 (static output)
